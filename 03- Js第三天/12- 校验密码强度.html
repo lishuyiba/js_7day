@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        #d1
+        {
+            border:1px solid red;
+        }
+        .left
+        {
+            width:80px;
+            text-align:right;
+        }
+        #pwdStrong td
+        {
+            width:30px;
+            background-color:gray;
+            text-align:center;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var txt = document.getElementById("txtPwd");
+            txt.onkeyup = function () {
+                var t = this.value;
+                var table = document.getElementById("pwdStrong");
+                var tds = table.getElementsByTagName("td");
+                var num = getLevel(t);
+                //alert(num);
+                if (num == 1) {
+                    tds[0].style.backgroundColor = "green";
+                    tds[1].style.backgroundColor = "gray";
+                    tds[2].style.backgroundColor = "gray";
+                }
+                else if (num == 2) {
+                    tds[0].style.backgroundColor = "green";
+                    tds[1].style.backgroundColor = "green";
+                    tds[2].style.backgroundColor = "gray";
+                }
+                else if (num==3) {
+                    tds[0].style.backgroundColor = "green";
+                    tds[1].style.backgroundColor = "green";
+                    tds[2].style.backgroundColor = "green";
+                }
+                else{
+                    tds[0].style.backgroundColor = "gray";
+                    tds[1].style.backgroundColor = "gray";
+                    tds[2].style.backgroundColor = "gray";
+                }
+            }
+
+
+        }
+        function getLevel(val) {
+            var num = 0;
+            var reg = /\d/;//数字
+            if (reg.test(val)) {
+                num++;
+            }
+
+            var reg = /[a-zA-Z]/;//字母
+            if (reg.test(val)) {
+                num++;
+            }
+
+            var reg = /[^0-9a-zA-Z]/;//非数字 字母
+            if (reg.test(val)) {
+                num++;
+            }
+            return num;
+        }
+    </script>
+</head>
+<body>
+    <div id="d1">
+        <table>
+        <tr>
+            <td class="left">密码：</td>
+            <td>
+                <input id="txtPwd" type="text" />
+                <table id="pwdStrong">
+                    <tr>
+                        <td>弱</td>
+                        <td>中</td>
+                        <td>强</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

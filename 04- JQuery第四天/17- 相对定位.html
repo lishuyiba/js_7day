@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#tb tr").click(function () {
+                //在当前文档里面找td
+                //$("td").text("aaaa");
+
+                //相对定位，加上$(this)参数
+                //在td当前行里面找（选中整行）
+                //$("td", $(this)).css("background-color", "red");
+                //在td当前行里面找（只选中索引为2的那一个表格）
+                $("td", $(this)).eq(1).css("background-color", "red");
+            })
+        })
+    </script>
+</head>
+<body>
+    <table id="tb" border="1">
+        <tr>
+            <td>11111111111</td>
+            <td>11111111111</td>
+        </tr>
+        <tr>
+            <td>11111111111</td>
+            <td>11111111111</td>
+        </tr>
+        <tr>
+            <td>11111111111</td>
+            <td>11111111111</td>
+        </tr>
+        <tr>
+            <td>11111111111</td>
+            <td>11111111111</td>
+        </tr>
+    </table>
+</body>
+</html>

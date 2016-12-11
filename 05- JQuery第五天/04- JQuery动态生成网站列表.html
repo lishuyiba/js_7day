@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var json = [
+                { "name": "baidu", "site": "http://www.baidu.com" },
+                { "name": "cnbeta", "site": "http://www.cnbeta.com" },
+                { "name": "qb", "site": "http://www.qiushibaike.com" }
+            ]
+
+            var $tb = $("<table></table>");
+
+            //样式
+            //$tb.css("border", "1px solid red");
+
+            //标签的属性
+            $tb.attr("border", "1px");
+            $tb.attr("width", "400px");
+
+            $("#d1").append($tb);
+
+            $.each(json, function () {
+                var $tr = $("<tr></tr>");
+                $tb.append($tr);
+
+                //标题
+                var $td = $("<td><a href='" + this.site + "'>" + this.name + "</a></td>")
+
+                //第一种
+                //给a标签注册事件
+                //var $link = $("a", $td);
+                //$link.click(function () {
+                //    alert("123");
+                //    return false;
+                //})
+
+                //第二种
+                //$td.children("a:first").click(function () {
+                //    alert("111");
+                //    return false;
+                //})
+
+                $tr.append($td);
+
+                //网站URL
+                $td = $("<td>" + this.site + "</td>");
+                $tr.append($td)
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

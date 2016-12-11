@@ -1,0 +1,95 @@
+﻿
+<html>
+<head>
+    <title>content</title>
+<script type="text/javascript">
+
+    function sAlert(str) {
+        var msgw, msgh, bordercolor;
+        msgw = 300; //提示窗口的宽度
+        msgh = 200; //提示窗口的高度
+        titleheight = 25 //提示窗口标题高度
+        bordercolor = "#FF3C00"; //提示窗口的边框颜色
+        titlecolor = "#D2CECE"; //提示窗口的标题颜色
+
+        var sWidth, sHeight;
+        //sWidth=document.body.offsetWidth; //得出当前屏幕的宽
+        sWidth = document.body.clientWidth; //BODY对象宽度
+
+        //sHeight=screen.height;//得到当前屏幕的高
+        //sHeight=document.body.clientHeight;//BODY对象高度
+        if (window.innerHeight && window.scrollMaxY) {
+            sHeight = window.innerHeight + window.scrollMaxY;
+        }
+        else if (document.body.scrollHeight > document.body.offsetHeight) {
+            sHeight = document.body.scrollHeight;
+        }
+        else {
+            sHeight = document.body.offsetHeight;
+        } //以上得到整个屏幕的高
+
+        var bgObj = document.createElement("div"); //创建一个div对象
+        bgObj.setAttribute('id', 'bgDiv'); //可以用bgObj.id="bgDiv"的方法，是为div指定属性值
+        bgObj.style.position = "absolute"; //把bgDiv这个div绝对定位
+        bgObj.style.top = "0"; //顶部为0
+        bgObj.style.background = "#777"; //背景颜色
+        bgObj.style.filter = "progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75)"; //ie浏览器透明度设置
+        bgObj.style.opacity = "0.6"; //透明度(火狐浏览器中)
+        bgObj.style.left = "0"; //左边为0
+        bgObj.style.width = sWidth + "px"; //宽(上面得到的屏幕宽度)
+        bgObj.style.height = sHeight + "px"; //高(上面得到的屏幕高度)
+        bgObj.style.zIndex = "100"; //层的z轴位置
+        document.body.appendChild(bgObj);
+
+        var msgObj = document.createElement("div")//创建一个div对象
+        msgObj.setAttribute("id", "msgDiv"); //可以用bgObj.id="msgDiv"的方法，是为div指定属性值
+        msgObj.setAttribute("align", "center"); //为div的align赋值
+        msgObj.style.background = "white"; //背景颜色为白色
+        msgObj.style.border = "1px solid " + bordercolor; //边框属性，颜色在上面已经赋值
+        msgObj.style.position = "absolute"; //绝对定位
+        msgObj.style.left = "35%"; //从左侧开始位置
+        msgObj.style.top = "30%"; //从上部开始位置
+        msgObj.style.font = "12px/1.6em Verdana, Geneva, Arial, Helvetica, sans-serif"; //字体属性
+        //msgObj.style.marginLeft = "-225px";//左外边距
+        //msgObj.style.marginTop = -75+document.documentElement.scrollTop+"px";//上外边距
+        msgObj.style.width = msgw + "px"; //提示框的宽(上面定义过)
+        msgObj.style.height = msgh + "px"; //提示框的高(上面定义过)
+        msgObj.style.textAlign = "center"; //文本位置属性，居中。
+        msgObj.style.lineHeight = "25px"; //行间距
+        msgObj.style.zIndex = "101"; //层的z轴位置
+
+        var title = document.createElement("h4"); //创建一个h4对象
+        title.setAttribute("id", "msgTitle"); //为h4对象填加标题
+        title.setAttribute("align", "right"); //文字对齐方式
+        title.style.margin = "0"; //浮动
+        title.style.padding = "3px"; //浮动
+        title.style.background = titlecolor; //背景颜色
+        title.style.filter = "progid:DXImageTransform.Microsoft.Alpha(startX=20, startY=20, finishX=100, finishY=100,style=1,opacity=75,finishOpacity=100);";
+        title.style.opacity = "0.75"; //透明
+        //title.style.border="1px solid " + bordercolor;//边框
+        title.style.height = "25px"; //高度
+        title.style.font = "12px Verdana, Geneva, Arial, Helvetica, sans-serif"; //字体属性
+        title.style.color = "white"; //文字颜色
+        title.style.cursor = "pointer"; //鼠标样式
+        title.innerHTML = "<a href=\"#\">关闭</a>"; //显示的文字
+        title.onclick = function () {
+            document.body.removeChild(bgObj); //移除遮罩层
+            document.getElementById("msgDiv").removeChild(title); //在提示框中移除标题
+            document.body.removeChild(msgObj); //移除提示框
+        }
+        document.body.appendChild(msgObj); //在body中画出提示框层
+        document.getElementById("msgDiv").appendChild(title); //在提示框中增加标题
+        var txt = document.createElement("p");
+        txt.style.margin = "1em 0"; //文本浮动
+        txt.setAttribute("id", "msgTxt"); //为p属性增加id属性
+        txt.innerHTML = str; //把传进来的值赋给p属性
+        document.getElementById("msgDiv").appendChild(txt); //把p属性增加到提示框里
+    }
+         </script>
+
+
+</head>
+<body>
+ <a href="#" onclick="sAlert('<a href=http://www.it300.net>测试效果</a>');return false;">点击测试</a>
+</body>
+</html>

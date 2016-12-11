@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/ecmascript">
+        window.onload = function () {
+            var json = [
+                { "name": "美女1", "url": "image/1.jpg" },
+                { "name": "美女2", "url": "image/2.jpg" },
+                { "name": "美女3", "url": "image/3.jpg" }
+            ]
+            //获取imgs标签
+            var div = document.getElementById("imgs");
+
+            //判断json是否有数据
+            if (json.length>0) {
+                var ul = document.createElement("ul");
+                div.appendChild(ul);
+
+                for (var i = 0; i < json.length; i++) {
+                    var li = document.createElement("li");
+                    ul.appendChild(li);
+
+                    var link = document.createElement("<a href='" + json[i].url + "'></a>");
+                    link.innerHTML = json[i].name;
+
+                    link.onclick = function () {
+                        var href = this.href;
+                        img.scr = href;
+                        return false;
+                    }
+                    li.appendChild(link);
+                }
+                //动态生成img
+                var img = document.createElement("img");
+                div.appendChild(img);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="imgs">
+    </div>
+</body>
+</html>

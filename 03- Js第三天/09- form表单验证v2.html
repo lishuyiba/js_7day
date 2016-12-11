@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function checkInput() {
+            var name = document.getElementById("txt").value;
+            if (name.length == 0) {
+                alert("用户名不能为空！")
+                document.getElementById("txt").focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!--
+        onsubmit 表单提交前触发的事件，只有点击submit按钮才触发
+        调用表单的submit()方法 不会触发表单的onsubmit事件
+        -->
+    <form id="f1" action="02- 登陆层.html" onsubmit="return checkInput()">
+        <input id="txt" type="text" />
+        <input id="btn" type="submit" value="搜索" />
+    </form>
+</body>
+</html>

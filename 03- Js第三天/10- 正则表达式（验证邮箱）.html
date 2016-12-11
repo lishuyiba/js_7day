@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var t = document.getElementById("txtMail");
+            t.onblur = function () {
+                var reg = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+                if (!reg.test(this.value)) {//判断值
+                    this.style.backgroundColor = "red";
+                    document.getElementById("btn").disabled = true;
+                }
+                else {
+                    this.style.backgroundColor = "white";
+                    document.getElementById("btn").disabled = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txtMail"/>
+    <input type="button" id="btn" value="注册" />
+</body>
+</html>

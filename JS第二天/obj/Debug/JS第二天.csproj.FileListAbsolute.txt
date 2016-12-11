@@ -1,0 +1,5 @@
+D:\Js\JavaScript练习\JS第二天\bin\JS第二天.dll
+D:\Js\JavaScript练习\JS第二天\bin\JS第二天.pdb
+D:\Js\JavaScript练习\JS第二天\obj\Debug\JS第二天.csprojResolveAssemblyReference.cache
+D:\Js\JavaScript练习\JS第二天\obj\Debug\JS第二天.dll
+D:\Js\JavaScript练习\JS第二天\obj\Debug\JS第二天.pdb

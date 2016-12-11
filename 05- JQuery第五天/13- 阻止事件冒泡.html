@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("table,tr,td").click(function (e) {
+                //事件冒泡中的this和e.target不同
+                //this 监听事件的对象  
+                //e.target 触发事件的对象 dom对象
+                //alert($(this).html()); //结果：<tbody><tr><td><p>pppppppppppppp</p></td></tr></tbody>
+                alert(e.target.innerHTML); //结果：pppppppppppppp
+
+
+            })
+
+            $("p").click(function (e) {// e 就是事件参数
+                //alert($(this).html());
+                //阻止事件冒泡
+                e.stopPropagation();
+                alert(e.target.innerHTML);
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <p>pppppppppppppp</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

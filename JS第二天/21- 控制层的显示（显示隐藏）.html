@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function f1(btn) {
+            var div1 = document.getElementById("d1");
+            if (div1.style.display=="") {
+                div1.style.display = "none";
+                btn.value = "显示";
+            }
+            else {
+                div1.style.display = "";
+                btn.value = "隐藏";
+            }
+        }
+    </script>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>   
+    <input id="btn" type="button" value="隐藏" onclick="f1(this)" /><br />
+    <div id="d1"></div>
+</body>
+</html>

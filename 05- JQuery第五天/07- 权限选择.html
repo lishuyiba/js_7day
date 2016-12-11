@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(":button[value=>]").click(function () {
+
+                //两行代码
+                //var $options = $("#all option:selected").remove().removeAttr("selected");
+                //$("#sel").append($options);
+
+                //一行代码
+                //$("#all option:selected").remove().removeAttr("selected").appendTo($("#sel"));
+
+                //
+                $("#all option:selected").removeAttr("selected").appendTo($("#sel"));
+            })
+        })
+    </script>
+</head>
+<body>
+    <select id="all" size="5" multiple="multiple">
+        <option>查找</option>
+        <option>编辑</option>
+        <option>删除</option>
+        <option>添加</option>
+    </select>
+    <input type="button" value=">" />
+    <input type="button" value="<" />
+    <input type="button" value=">>" />
+    <input type="button" value="<<" />
+    <select id="sel" size="5" multiple="multiple">
+    </select>
+</body>
+</html>

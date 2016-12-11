@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function f1() {
+            var radios = document.getElementsByName("sex");
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {//判断是否 选中
+                    alert("您选择了 " + radios[i].value);
+                    break;
+                }
+            }
+        };
+
+        function f2() {
+            var addCboxs="";
+            var cboxs = document.getElementsByName("cbox");
+            if (cboxs.length!=0) {
+                for (var i = 0; i < cboxs.length; i++) {
+                    if (cboxs[i].checked) {
+                        addCboxs += cboxs[i].value + " ";
+                    }
+                }
+                alert("您选择了[ " + addCboxs + " ]");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="radio" name="sex" value="男" />男
+    <input type="radio" name="sex" value="女" />女<br />
+    <input type="button" name="name" value="识别" onclick="f1()" /><br />
+    <br />
+    <!--   ========================================   -->
+    <input type="checkbox" name="cbox" value="看电视"/>看电视
+    <input type="checkbox" name="cbox" value="上网" />上网
+    <input type="checkbox" name="cbox" value="旅行" />旅行
+    <input type="checkbox" name="cbox" value="跳舞" />跳舞<br />
+    <input type="button" name="name" value="识别" onclick="f2()" /><br />
+    <br />
+</body>
+</html>

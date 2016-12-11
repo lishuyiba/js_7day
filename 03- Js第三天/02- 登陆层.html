@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #login
+        {
+            width:300px;
+            height:150px;
+            border:1px solid red;
+            position:absolute;/*让div脱离文档流*/
+            display:none;/*默认不显示*/
+        }
+    </style>
+    <script type="text/javascript">
+        function show() {
+            var div = document.getElementById("login");
+            div.style.display = "block";
+
+            var x = (document.documentElement.clientWidth - div.clientWidth) / 2;
+            var y = (document.documentElement.clientHeight - div.clientHeight) / 2;
+
+            //设置位置记得 单位“px”，否则不能兼容chrome
+            div.style.top = y + "px";
+            div.style.left = x + "px";
+
+            //弹出网页窗口
+            //window.showModalDialog("01- 动态显示层.html");
+
+        }
+        function hide() {
+            var div = document.getElementById("login");
+            if (div) {
+                div.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body onresize="show()">
+    <input type="button" name="name" value="longin" onclick="show()" /><br />
+    <div id="login">
+        <input type="text" name="name" value="" /><br />
+        <input type="text" name="name" value="" /><br />
+        <input type="button" name="name" value="登陆" /><br />
+        <input type="button" name="name" value="取消" onclick="hide()" /><br />
+    </div>
+</body>
+</html>

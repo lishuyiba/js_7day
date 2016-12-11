@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //            next
+            //下一个节点 .next("div")  引号里面是条件
+            //$("#d4").next().css("background-color", "red");
+
+            //            nextAll
+            //之后紧邻的第一个兄弟节点（div）
+            //$("#d4").next("div").css("background-color", "red");
+
+            //之后的所有兄弟节点
+            //$("#d4").nextAll().css("background-color", "red");
+
+            //之后的所有div
+            //$("#d4").nextAll("div").css("background-color", "red");
+
+            //             prev
+            //之前紧邻的节点
+            //$("#d4").prev().css("background-color", "red");
+
+            //             prevAll
+            //之前的所有节点
+            //$("#d4").prevAll().css("background-color", "red");
+
+            //我和我之后的所有节点
+            //$("#d4").css("background-color", "red");
+            //$("#d4").nextAll().css("background-color", "red");
+
+            //            siblings
+            //找所有的兄弟节点（不包含自己）
+            //$("#d4").siblings().css("background-color", "red");
+
+            //找所有的兄弟节点（只找div）
+            //$("#d4").siblings("div").css("background-color", "red");
+
+            //             end
+            //end返回上一次包装集被破坏之前的状态（我和我之后的所有节点）
+            //原始状态：$("#d4") 、被破坏：nextAll()  、不被破坏：css("background-color", "red")
+            //$("#d4").nextAll().css("background-color", "red").end().css("background-color", "red");
+             
+            //             andSelf
+            //我和我之后的所有节点
+            //$("#d4").nextAll().andSelf().css("background-color", "red");
+
+            //             andSelf和end一起
+            //$("#d4").nextAll().andSelf().css("background-color", "red"); //返回 .nextAll().andSelf()
+            //$("#d4").nextAll().andSelf().end().css("background-color", "red");//返回 .nextAll()
+            //$("#d4").nextAll().andSelf().end().end().css("background-color", "red"); //返回 $("#d4")
+            //$("#d4").nextAll().andSelf().end().end().end().css("background-color", "red"); //返回 空白，已经没有了
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <div>1111111111111</div>
+    <div>2222222222222</div>
+    <div>3333333333333</div>
+    <div id="d4">4444444444444</div>
+    <p>pppppppppppppppppp</p>
+    <div>5555555555555</div>
+    <div>6666666666666</div>
+    <div>7777777777777</div>
+    <div>8888888888888</div>
+</body>
+</html>

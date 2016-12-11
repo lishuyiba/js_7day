@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var div = document.getElementById("d1");
+            setInterval(function () {
+                var date = new Date();
+
+
+
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var sec = date.getSeconds();
+                div.innerHTML = "当前系统时间：" + check(hour) + ":" + check(minute) + ":" + check(sec);
+            }, 1000);
+        }
+        function check(num) {
+            return num < 10 ? "0" + num : num;
+        }
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

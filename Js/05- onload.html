@@ -1,0 +1,50 @@
+﻿<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+
+        第一种onload方式：
+
+        onload 当body所有内容都加载完成的时候，才会去触发f1()的事件。
+
+        使用 <body onload="f1()"> 坏处：
+        这种方式不推荐使用，因为代码不分离，和动态注册对比，执行速度慢
+
+    <script type="text/javascript">
+        function f1() {
+            window.txtName.value = "admin";
+        };
+    </script>
+</head>
+<body onload="f1()">
+    <input id="txtName" type="text"/>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+
+       <!-- 
+           第二种onload方式：
+
+        onload 当body所有内容都加载完成的时候，才会去触发f1()的事件。-->
+
+        
+
+    <script type="text/javascript">
+        window.onload = function () {
+            window.txtName.value = "admin";
+        };
+    </script>
+</head>
+<body>
+    <input id="txtName" type="text"/>
+</body>
+</html>

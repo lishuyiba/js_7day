@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <!--
+        srcElement
+        多个按钮共用同一js方法
+
+        -->
+
+    <script type="text/javascript">
+        //srcElement
+        function b_click() {
+            //触发事件的按钮
+            var btn = window.event.srcElement;
+            var v = btn.value;
+            if (v=="+") {
+                alert("加法");
+            }
+            else if (v=="-") {
+                alert("减法");
+            }
+            else if (v == "*") {
+                alert("乘法");
+            }
+            else if (v == "/") {
+                alert("除法");
+            }
+        };
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="+" onclick="b_click()" /><br />
+    <input type="button" value="-" onclick="b_click()" /><br />
+    <input type="button" value="*" onclick="b_click()" /><br />
+    <input type="button" value="/" onclick="b_click()" /><br />
+</body>
+</html>

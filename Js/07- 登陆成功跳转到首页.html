@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function login() {
+            document.getElementById("span_login").innerHTML = "登陆成功！";
+            document.getElementById("span_longlast").innerHTML = "秒后跳转到首页！";
+            document.getElementById("Num").innerHTML = 5;
+            var setTimeId = setInterval(function () {
+                var num = document.getElementById("Num").innerHTML;
+                num = num - 1;
+                document.getElementById("Num").innerHTML = num;//把时间设置到label
+                if (num == 0) {//倒计时为0
+                    clearTimeout(setTimeId);//清除定时器
+                    window.location.href = "01- 定义js事件.html";//跳转
+                }
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="登陆" onclick="login()" />
+    <br />
+    <span id="span_login"></span><label id="Num"></label><span id="span_longlast"></span>
+</body>
+</html>

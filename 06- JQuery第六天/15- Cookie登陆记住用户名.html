@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script src="JQuery/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var name = $.cookie("name");
+            if (name) {
+                $("#txtName").val(name);
+                $("#s_name").html("Cookie有效！");
+            }
+            else {
+                $("#s_name").html("Cookie已过期！");
+            }
+
+            $("#btn").click(function () {
+                if ($("#txtName").val().length > 0) {
+                    var userName = $("#txtName").val();
+                    $.cookie("name", userName, { expires: 7 });
+                    $("#s_login").html("Cookie保存成功！");
+                }
+                else {
+                    $("#s_login").html("用户名为空，Cookie保存失败！");
+                    $("#s_name").html("");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    用户：<input id="txtName" type="text" value=""/><span id="s_name"></span><br />
+    密码：<input id="txtPwd" type="text" value=""/><br />
+    <br />
+    <br />
+    <input id="btn" type="button" value="login" /><span id="s_login"></span>
+</body>
+</html>

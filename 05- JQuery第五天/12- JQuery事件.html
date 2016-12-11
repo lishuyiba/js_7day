@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!--
+        
+        bind 绑定事件
+        unbind 移除事件
+        one() 一次性事件
+        hover(enterfn,leavefn) 合成事件 【enterfn:鼠标放上调用，leavefn:鼠标离开调用)】
+        toggle 合成事件【点击第一次触发第一个事件，点击第二次触发第二个事件】
+
+
+        
+        -->
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(":input[value=bind]").click(function () {
+                //绑定事件
+                $("#test").bind({
+                    "click": function () {
+                        alert("click");
+                    }, "mousemove": function () {
+                        alert("mousemove");
+                    }, "mouseout": function () {
+                        alert("mouseout");
+                    }
+                });
+                alert("绑定成功！");
+            });
+            ///////////////////////////////////////////////
+            $(":input[value=unbind]").click(function () {
+                //移除事件
+                //$("#test").unbind("mouseout");
+                $("#test").unbind();//移除所有事件
+                alert("事件移除成功！");
+            });
+
+            /////////////////////////////////////////////
+            $(":input[value=one]").click(function () {
+                //一次性事件
+                $("#test").one("click", function () {
+                    alert("one");
+                });
+            })
+
+            ////////////////////////////////////////////
+            $(":input[value=hover]").click(function () {
+                //合成事件
+                $("#test").hover(function () {
+                    alert("鼠标放上来了！");
+                }, function () {
+                    alert("鼠标离开了！");
+                });
+            })
+
+            /////////////////////////////////////////
+            $(":input[value=toggle]").click(function () {
+                //合成事件
+                $("#test").toggle(function () {
+                    alert("触发了第一个事件！");
+                }, function () {
+                    alert("触发了第二个事件！");
+                }, function () {
+                    alert("触发了第三个事件！");
+                }, function () {
+                    alert("触发了第四个事件！");
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="test" type="button" value="test" /><br />
+    <input type="button" value="bind" /><br />
+    <input type="button" value="unbind" /><br />
+
+    <input type="button" value="one" /><br />
+    <input type="button" value="hover" /><br />
+    <input type="button" value="toggle" /><br />
+</body>
+</html>

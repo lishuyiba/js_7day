@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function ff() {
+            var t = clipboardData.getData("text");//getData 获取值
+            t = t + "版权信息：来自xxxx网站";
+            clipboardData.setData("text", t); //setData 设置值
+        };
+    </script>
+</head>
+<body oncopy="setTimeout('ff()',1)">
+    <input type="text" name="name" value=" " /><br />
+    支持IE 以下是新闻内容
+    支持IE 以下是新闻内容
+    支持IE 以下是新闻内容支持IE 以下是新闻内容支持IE 以下是新闻内容支持IE 以下是新闻内容
+    支持IE 以下是新闻内容
+</body>
+</html>

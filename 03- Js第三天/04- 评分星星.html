@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var tb = document.getElementById("rating");
+            var tds = tb.getElementsByTagName("td");
+            //for (var i = 0; i < tds.length; i++) {
+            //    tds[i].style.cursor = "pointer";
+            //    //tds[i].children[0].src = "starFill.jpg";
+            //    tds[i].id = i;
+            //    tds[i].onmouseover = function () {
+            //        var index = this.id;
+            //        for (var i = 0; i < parseInt(index); i++) {
+            //            tds[i].src = "starFill.jpg";
+            //        }
+            //    }
+            //    tds[i].onmouseout = function () {
+
+            //    }
+            //}
+            for (var i = 0; i < tds.length; i++) {
+                tds[i].style.cursor = "pointer";
+                tds[i].id = i;
+                tds[i].onmouseover = function () {
+                    var index = this.id;
+                    for (var i = 0; i <= parseInt(index) ; i++) {
+                        //tds[i].innerText = "★";
+                        tds[i].children[0].src = "starFill.jpg";
+                    }
+                    for (var i = parseInt(index) + 1; i < tds.length; i++) {
+                        //tds[i].innerText = "☆";
+                        tds[i].children[0].src = "starEmpty.jpg";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="rating">
+        <tr>
+            <td><img id="1" src="starEmpty.jpg" /></td>
+            <td><img id="2" src="starEmpty.jpg" /></td>
+            <td><img id="3" src="starEmpty.jpg" /></td>
+            <td><img id="4" src="starEmpty.jpg" /></td>
+            <td><img id="5" src="starEmpty.jpg" /></td>
+        </tr>
+    </table>
+</body>
+</html>

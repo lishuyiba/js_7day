@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        img {
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        document.onmousemove = function () {
+            //var img = document.getElementById("i1");
+            //img.style.top = event.clientY - 20 + "px";
+            //img.style.left = event.clientX - 10 + "px";
+
+            //获取标签的自定义属性，在ie中可以直接 img.aa 但是其他浏览器不支持，需要使用getAttribute
+            //alert(img.getAttribute("aa"));
+
+        }
+        window.onload = function () {
+            var lbl = document.getElementById("lbl");
+            lbl.setAttribute("for", "t");//点击label标签，光标定在 text文本框
+            lbl.setAttribute("style", "color:red");//设置样式
+        }
+    </script>
+</head>
+<body>
+    <label id="lbl">用户名</label><input id="t" type="text" />
+    <img aa="bb" id="i1" src="tianshi.gif" /> 
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link id="lnk" href="css/red.css" rel="stylesheet" />
+    <!--默认红色-->
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script src="JQuery/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            //窗体加载时读取cookie
+            var css = $.cookie("css");
+            if (css) {
+                $("#lnk").attr("href", css);
+            }
+
+
+            $("a").click(function () {
+                var css = $(this).attr("href");
+                $("#lnk").attr("href", css);//把当前点击的颜色 赋值 给link的href
+
+                //记录当前的样式
+                $.cookie("css", css, { exirpes: 7 });
+
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="css/red.css">红</a>
+    <a href="css/green.css">绿</a>
+    <a href="css/blue.css">蓝</a>
+</body>
+</html>

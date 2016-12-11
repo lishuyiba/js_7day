@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var div = document.getElementById("mv");
+            var links = div.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                links[i].onclick = function () {
+
+                    //其他为白色
+                    for (var i = 0; i < links.length; i++) {
+                        links[i].style.backgroundColor = "white";
+                    }
+                    //选中为 红色
+                    this.style.backgroundColor = "red";
+
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="mv">
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+        <a href="#">美女1</a>
+    </div>
+</body>
+</html>

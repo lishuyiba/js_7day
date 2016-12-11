@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        alert(exTrim("    aaaa    ") + "bbbb");
+
+        //普通
+        function exTrim(str) {
+            var reg = /(^\s+)|(\s+$)/g;//去掉前后空格格
+            return str.replace(reg, "");
+        }
+
+        //高效
+        //String.prototype.trim = function() {
+        //    return this.replace(/^\s."/).replace(/\s+$/);
+        //}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

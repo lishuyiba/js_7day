@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        (function () {
+            var $ = function (id) {
+                return document.getElementById(id);
+            }
+            window.$ = window.JQuery = $;//把JQuery和$注册给window
+        })();
+
+        window.onload = function () {
+            var div = $("d1");
+            div.innerHTML = "aaaa";
+        }
+        
+
+    </script>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+</body>
+</html>

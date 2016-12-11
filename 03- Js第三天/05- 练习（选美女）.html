@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var ul = document.getElementById("mv");
+            var lists = ul.getElementsByTagName("li");
+            for (var i = 0; i < lists.length; i++) {
+                lists[i].style.cursor = "pointer";
+                lists[i].onclick = function () {
+                    //未选中
+                    for (var i = 0; i < lists.length; i++) {
+                        lists[i].style.fontSize = "";
+                        lists[i].style.backgroundColor = "white";
+                    }
+                    //选中
+                    this.style.fontSize = "20px";
+                    //this.style.backgroundColor = "red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="mv">
+        <li>
+            西施
+        </li>
+        <li>
+            贵妃
+        </li>
+        <li>
+            貂蝉
+        </li>
+        <li>
+            昭君
+        </li>
+    </ul>
+</body>
+</html>

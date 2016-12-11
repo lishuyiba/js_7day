@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function move(all,sel) {
+            //var all = document.getElementById("all");
+            //var sel = document.getElementById("sel");
+
+            //这里是从索引为0开始移动
+            //for (var i = 0; i < all.children.length; i++) {
+            //    if (all.children[i].selected) {
+            //        sel.appendChild(all.children[i]);
+            //    }
+            //}
+
+            //这里是从索引最大的那一个开始移动
+            for (var i = all.children.length-1; i>=0 ; i--) {
+                if (all.children[i].selected) {
+                    var op = all.children[i];
+                    op.selected = false;
+                    //sel.appendChild(op); //这样添加，appendChild会按照索引反序的添加到sel里面去
+                    // appendChild 把页面上的元素进行移动，所以不用手动去移除
+                    //all.removeChild(all.children[i]);
+
+                    //insertBefore可以解决反序的问题
+                    //把op插入到select中的第一个元素之前
+                    sel.insertBefore(op, sel.firstChild);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <select id="all" size="5" multiple="multiple"> <!-- multiple 可以多选-->
+        <option>查找</option>
+        <option>编辑</option>
+        <option>添加</option>
+        <option>删除</option>
+    </select>
+    <input type="button" value=">>" />
+    <input type="button" value=">" onclick="move(document.getElementById('all'),document.getElementById('sel'))" />
+    <input type="button" value="<" onclick="move(document.getElementById('sel'), document.getElementById('all'))" />
+    <input type="button" value="<<" />
+    
+    <select id="sel" size="5" multiple="multiple">
+
+    </select>
+</body>
+</html>

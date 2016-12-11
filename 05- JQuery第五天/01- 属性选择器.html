@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //具有id属性的input标签
+            //$("input[id]").css("background-color", "red");
+
+            //给所有的文本框赋值
+            //$("input[type=text]").val("admin");
+
+            //所有文本框 除id为t1外
+            //$("input[type=text][id!=t1]").css("background-color", "red");
+
+            //id具有t的所有文本框
+            //$("input[type=text][id*=t]").css("background-color", "red");
+
+            //找所有被禁用的文本框
+            //$("input[type=text]:disabled").css("background-color", "red");
+
+            //获取选中的 radio 的值
+            //$("input[value=checked]").click(function () {
+            //    var v = $("input[name=sex]:checked").val();
+            //    alert(v);
+            //})
+
+            //获取选中checkBox的值
+            $("input[value=checked1]").click(function () {
+                $("input[type=checkbox]:checked").each(function () {
+                    //this 是包装集中的每一项 dom对象
+                    alert($(this).val());
+                })
+            })
+
+            //表单选择器
+            //:text 找到所有的文本框
+            //$(":text").val("admin");
+        })
+    </script>
+</head>
+<body>
+
+    <input type="radio" name="sex" value="男" />男
+    <input type="radio" name="sex" value="女" />女
+    <br />
+    <input type="button" value="checked" /><br />
+
+
+    <input type="checkbox" value="吃饭" />吃饭
+    <input type="checkbox" value="睡觉" />睡觉
+    <input type="checkbox" value="玩耍" />玩耍
+    <br />
+    <input type="button" value="checked1" /><br />
+
+
+    <input id="t1" disabled="disabled" type="text" /><br />
+    <input id="t2" type="text" /><br />
+    <input id="t3" type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input id="btn1" type="button" value="click1" /><br />
+    <input id="btn2" type="button" value="click2" /><br />
+    <input type="button" value="click3" /><br />
+    <input type="button" value="click4" /><br />
+</body>
+</html>

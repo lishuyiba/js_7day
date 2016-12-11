@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01- Js第一天", "Js\01- Js第一天.csproj", "{9B422364-4C19-444F-B857-FD55A8D80816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02- JS第二天", "JS第二天\02- JS第二天.csproj", "{ACFFA2BC-A542-478E-9E60-7D8BB5EA2943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03- Js第三天", "03- Js第三天\03- Js第三天.csproj", "{7CD28B36-D5BE-4D33-B0D7-45120DBB31F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04- JQuery第四天", "04- JQuery第四天\04- JQuery第四天.csproj", "{0C1C25BB-F97B-4687-B9BD-0C83AF900780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05- JQuery第五天", "05- JQuery第五天\05- JQuery第五天.csproj", "{2FE293B5-D14F-4168-8A6F-56199345C3FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06- JQuery第六天", "06- JQuery第六天\06- JQuery第六天.csproj", "{F5989E05-6A99-4F01-BD58-4BB2DE924426}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B422364-4C19-444F-B857-FD55A8D80816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B422364-4C19-444F-B857-FD55A8D80816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B422364-4C19-444F-B857-FD55A8D80816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B422364-4C19-444F-B857-FD55A8D80816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFFA2BC-A542-478E-9E60-7D8BB5EA2943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFFA2BC-A542-478E-9E60-7D8BB5EA2943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFFA2BC-A542-478E-9E60-7D8BB5EA2943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFFA2BC-A542-478E-9E60-7D8BB5EA2943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD28B36-D5BE-4D33-B0D7-45120DBB31F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD28B36-D5BE-4D33-B0D7-45120DBB31F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD28B36-D5BE-4D33-B0D7-45120DBB31F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD28B36-D5BE-4D33-B0D7-45120DBB31F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1C25BB-F97B-4687-B9BD-0C83AF900780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1C25BB-F97B-4687-B9BD-0C83AF900780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1C25BB-F97B-4687-B9BD-0C83AF900780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1C25BB-F97B-4687-B9BD-0C83AF900780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE293B5-D14F-4168-8A6F-56199345C3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE293B5-D14F-4168-8A6F-56199345C3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE293B5-D14F-4168-8A6F-56199345C3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE293B5-D14F-4168-8A6F-56199345C3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5989E05-6A99-4F01-BD58-4BB2DE924426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5989E05-6A99-4F01-BD58-4BB2DE924426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5989E05-6A99-4F01-BD58-4BB2DE924426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5989E05-6A99-4F01-BD58-4BB2DE924426}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

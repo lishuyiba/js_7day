@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var json = [{ "name": "cnblogs", "site": "http://www.cnblogs.com" },
+                        { "name": "cnbeta", "site": "http://www.cnbeta.com" },
+                        { "name": "qiushibaike", "site": "http://www.qiushibaike.com" }
+            ];
+            var div = document.getElementById("d1");
+            //动态创建table  
+            var table = document.createElement("table");
+            //table.border = 1;
+            table.width = "400px";
+            //把table添加到div中
+            div.appendChild(table);
+
+
+            for (var i = 0; i < json.length; i++) {
+                //json[i] 含有一个name 一个site
+                var site = json[i];
+                //创建行
+                var row = document.createElement("tr");
+                //添加到table中
+                table.appendChild(row);
+
+                //创建td
+                var td = document.createElement("td");
+                td.innerHTML = "<a href='" + site.site + "'>" + site.name + "</a>";
+                row.appendChild(td);
+
+                td = document.createElement("td");
+                td.innerText = site.site;
+                row.appendChild(td);
+
+                td = document.createElement("td");
+                td.innerHTML = "<a href='#'>操作</a>";
+                row.appendChild(td);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+</body>
+</html>

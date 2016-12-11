@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <style type="text/css">
+        #qqTab
+        {
+        	width:500px;
+        	height:200px;
+        	border:solid 1px gray;
+        }
+        #qqTab ul
+        {
+        	margin:0px;
+        	height:20px;
+        	background-color:#f1f1f1;
+        	border-bottom:solid 1px gray;
+        }
+        #qqTab ul li
+        {
+        	list-style-type:none;
+        	float:left;
+        	width:80px;
+        	cursor:pointer;
+        	text-align:center;
+        }
+        .activeTab
+        {
+        	background-color:red;
+        	border-bottom-width:0px;
+        }
+       
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $("#qqTab ul li").hover(function () {
+                //1 设置菜单的选中
+                $(this).addClass("activeTab").siblings().removeClass("activeTab");
+
+                //2 设置对应详细新闻的显示
+                var id = $(this).attr("name");
+
+                $("#tabs " + id).siblings().hide().end().fadeIn();
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+    <div id="qqTab">
+        <ul>
+            <li name="#tabPage1" class="activeTab">国内新闻</li>
+            <li name="#tabPage2">国际新闻</li>
+            <li name="#tabPage3">火星新闻</li>
+        </ul>
+        <div id="tabs">
+            <div id="tabPage1" >
+                国内新闻111111111111
+            </div>
+            <div id="tabPage2" style="display:none">
+                国际新闻2222222222222
+            </div>
+            <div id="tabPage3" style="display:none">
+                火星新闻333333333333
+            </div>
+        </div>
+    </div>
+</body>
+</html>

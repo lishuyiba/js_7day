@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //全选
+            $("#chkAll").click(function () {
+                //容易犯错！！！！
+                //$(":checkbox[id*=chkChild]").attr("checked", true);
+                //让子的checkbox和父的checkbox的状态一致
+                $(":checkbox[id*=chkChild]").attr("checked",$(this).attr("checked"));
+            })
+
+            //给子的checkbox注册事件
+            $(":checkbox[id*=chkChild]").click(singleCheck);//调用
+
+            //反选
+            $("input[value=反选]").click(function () {
+                $(":checkbox[id*=chkChild]").each(function () {
+                    $(this).attr("checked", !$(this).attr("checked"));
+
+                    //调用
+                    singleCheck();
+                })
+            })
+
+        })
+
+        //封装
+        function singleCheck() {
+            //假设所有的子checkbox都选中了
+            var isCheckAll = true;
+            $(":checkbox[id*=chkChild]").each(function () {
+                //判断每一个checkbox的状态
+                //this 包装集中的每一个元素 dom对象 checkbox
+                if (!$(this).attr("checked")) {
+                    //在each中 return false 相当于break
+                    //         return true 相当于 continue
+                    isCheckAll = false;
+                    return false;
+                }
+            })
+            //设置全选的状态
+            $("#chkAll").attr("checked", isCheckAll);
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="chkAll" />全选
+    <input type="button" value="反选" />
+    <br />
+    <input type="checkbox" id="chkChild1" value="cf" />吃饭
+    <input type="checkbox" id="chkChild2" value="sj" />睡觉
+    <input type="checkbox" id="chkChild3" value="ws" />玩耍
+    <br />
+</body>
+</html>

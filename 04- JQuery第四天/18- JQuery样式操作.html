@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .my
+        {
+            width:200px;
+            height:200px;    
+        }
+        
+        .m
+        {
+            border:1px solid red;
+        }
+        
+        
+        .dark
+        {
+            /*background-color:Black;*/
+            filter:gray;
+         }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                //会把原来的样式覆盖  class = "m"
+                //$(".my").attr("class","m");
+
+                //var c = $(".my").attr("class");
+                //$(".my").attr("class",c+ " m");
+
+                //追加样式
+                $(".my").addClass("m");
+
+                $(".my").removeClass("my");
+            })
+
+
+
+
+            //开灯关灯
+            $("#btn1").click(function () {
+                $("body").toggleClass("dark");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="my">
+    aaaa
+    </div>
+    <input id="btn" type="button" value="click" />
+    <br />
+    <input id="btn1" type="button" value="click" />
+    <img src="images/2.jpg" />
+</body>
+</html>

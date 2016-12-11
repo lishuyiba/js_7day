@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        li
+        {
+            /*color:blue;*/
+            width:100px;
+            cursor:pointer;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#mv li").mousemove(function () {
+                $(this).css("background-color", "red");
+            }).mouseout(function () {
+                $(this).css("background-color", "white");
+            }).click(function () {
+                //.appendTo 把对象移动过去。
+                //.css("background-color", "white") 去除样式，可以使用removeAttr移除style属性
+                //.remove() 会移除对象的事件，不会移除样式
+                $(this).css("background-color", "white").remove().appendTo($("#cn"));
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="mv">
+        <li>西施</li>
+        <li>貂蝉</li>
+        <li>贵妃</li>
+        <li>凤姐</li>
+    </ul>
+    <hr />
+    <ul id="cn">
+    </ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "text") {
+                    //失去焦点
+                    inputs[i].onblur = function () {
+                        //如果文本的长度为0，则提示红色
+                        if (this.value.length==0) {
+                            this.style.backgroundColor = "red";
+                        }
+                        //如果文本的长度不为0，则显示白色
+                        else {
+                            this.style.backgroundColor = "white";
+                        }
+                    }
+                    //获得焦点
+                    inputs[i].onfocus = function () {
+                        //如果文本框的值为0，则显示 白色
+                        if (this.value.length==0) {
+                            this.style.backgroundColor = "white";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+</body>
+</html>

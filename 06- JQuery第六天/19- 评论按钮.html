@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .c
+        {
+            width:98px;
+            height:28px;
+            background-image:url(Images3/fragmentbg.jpg);
+            background-position-x:0px;
+            background-position-y:0px;/*设置图片像素的位置*/
+            border:0px;
+            cursor:pointer;
+        }
+        .d
+        {
+            width:98px;
+            height:28px;
+            background-image:url(Images3/fragmentbg.jpg);
+            background-position-x:0px;
+            background-position-y:-30px;/*设置图片像素的位置*/
+            border:0px;
+            cursor:pointer;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").mousemove(function () {
+                $(this).addClass("d");
+            }).mouseout(function () {
+                $(this).removeClass("d").addClass("c");
+            }).click(function () {
+                alert("发布成功！");
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" class="c" />
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #span {
+            color:red;
+        }
+    </style>
+    <script type="text/javascript">
+        function link_click(right) {
+            if (right) {
+
+            }
+            else {
+                alert("您没有权限查看！");
+                //取消后续内容（默认行为）的执行 a 相对于 href
+                window.event.returnValue = false;
+            }
+        };
+
+
+        function btn_click() {
+            var txtName = document.getElementById("txtName").value;
+            if (txtName.length==0) {//判断文本框的输入
+                //alert("内容不能为空！");
+                //让文本框获得光标
+                document.getElementById("txtName").focus();
+                document.getElementById("span").innerHTML = "* 不能为空";//提示
+                //取消默认行为的执行 submit 相对于 action
+                window.event.returnValue = false;
+            }
+        };
+        //第二 动态注册事件 事件响应函数
+        //只有在事件响应函数中 return false 才可以取消后续内容的执行
+        window.onload = function () {
+            document.getElementById("link").onclick = function () {
+                alert("无权限!");
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+    <!-- 第一 事件调用函数 -->
+    <!--<a href="01- 定义js事件.html" onclick="link_click(0)">link</a><br />--> <!--第一种 可以实现 通过动态注册事件 -->
+
+    <a id="link" href="01- 定义js事件.html">link</a><br /> <!--第二种 可以实现 通过onclick -->
+
+    <input id="txtName" type="text"/><span id="span"></span><br />
+
+    <!--<input type="submit" onclick="btn_click()" />-->
+    <input type="submit" onclick="btn_click(); return false;" />
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        //$(document).ready //类似于$对象的实例方法
+        //$.map //类似于$对象的静态方法
+
+        //map的使用
+        //var arr = [100, 200, 300, 400];
+        //arrNew = $.map(arr, function (item) {
+        //    return item + 2;
+        //});
+        //alert(arrNew);
+
+        //模拟map的内部实现
+        //function myMap(arr, fn) {
+        //    //定义一个空数组，和一个value变量
+        //    var ret = [], value;
+        //    for (var i = 0,length = arr.length;i < length;i++) {
+        //        //var i = 0, length = arr.length; i < length; i++
+        //        //调用fn对数组中的每个元素处理 并返回
+        //        value = fn(arr[i], i);
+        //        if (value != null) {
+        //            ret[ret.length] = value;
+        //        }
+        //    }
+        //    return ret;
+        //}
+        //var arr = [100, 200, 300, 400];
+        //var arrNew = myMap(arr,function (item) {
+        //    return item+2;
+        //});
+        //alert(arrNew);
+
+        //数组：索引、元素
+        //字典：key、value
+
+        //each的用法，对字典遍历
+        var dic = { "name": "zs", "age": 18, "sex": "男" };
+        //第一种
+        //$.each(dic, function (key,value) {
+        //    alert(key + ":" + value);
+        //});
+
+        //第二种
+        $.each(dic, function (key) {
+            //alert(key+":"+dic[key]);
+        })
+
+        //第三种
+        $.each(dic, function () {
+            //在each的第二个参数中 this是字典的值  callback.call
+            //alert(this);//结果：zs 18 男
+        })
+
+        //------------------------------------------------------------
+        //function test() {
+        //    alert(this);
+        //}
+        //var a = "abc";
+        ////call可以改变this 第一个参数就是this的指向
+        //test.call(a);
+
+
+        //------------------------------------------------------------
+        //改变this
+        //function test(ar,ar1) {
+        //    alert(this+"+"+ar+"+"+ar1);
+        //}
+        //var a = "abc";
+        ////call可以改变this 第一个参数就是this的指向
+        //test.call(a,"a1","a2");
+
+
+
+
+        //each对数组遍历
+        var arr = [100, 200, 300, 400];
+        $.each(arr, function (key, value) {
+            alert(key + ":" + value);//key为索引，value为值
+        });
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+
+        //窗体加载完成之后执行 dom创建完成，并且图片 css js 加载完成才触发
+        
+        //window.onload = function () {
+        //    alert("window.onload 1111");
+        //}
+        //onloady只能有一个onload，因为使用的是“=”赋值。
+        //window.onload = function () {
+        //    alert("window.onload  2222");
+        //}
+
+        //窗体加载完成之后执行 dom创建完成后 触发
+        $(document).ready(function () {
+            alert("ready 111");
+        });
+        //可以注册多次
+        $(document).ready(function () {
+            alert("ready 222");
+        });
+
+        //以上两种方式可以简写如下：
+        $(function () {
+            alert("ready 333");
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

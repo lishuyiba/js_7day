@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #d1,#d2
+        {
+            width:300px;
+            height:300px;
+            background-color:Red;
+        }
+        
+         #d11,#d22
+        {
+            width:100px;
+            height:100px;
+            background-color:Yellow;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var count1 = 0;
+        function f1() {
+            count1++;
+            document.getElementById("d11").innerText = count1;
+
+        }
+
+        var count2 = 0;
+        function f2() {
+            count2++;
+            document.getElementById("d22").innerText = count2;
+
+        }
+    </script>
+</head>
+<body>
+ <table onclick="alert('table onclick');">
+        <tr onclick="alert('tr onclick');">
+            <td onclick="alert('td onclick');"><p onclick="alert('p onclick');window.event.cancelBubble = true">aaaa</p></td>
+            <td>bbb</td>
+        </tr>
+    </table>
+    <br />
+    <!--srcElement  引发事件的对象-->
+     <table onclick="alert(event.srcElement.innerHTML);">
+        <tr onclick="alert(event.srcElement.innerHTML);">
+            <td onclick="alert(event.srcElement.innerHTML);"><p onclick="alert(event.srcElement.innerHTML);">aaaa</p></td>
+            <td>bbb</td>
+        </tr>
+    </table>
+
+     <!--this  监听事件的这个对象-->
+     <table onclick="alert(this.innerHTML);">
+        <tr onclick="alert(this.innerHTML);">
+            <td onclick="alert(this.innerHTML);"><p onclick="alert(this.innerHTML);">aaaa</p></td>
+            <td>bbb</td>
+        </tr>
+    </table>
+    <!--onmourseover-->
+    <br />
+    <div id="d1" onmouseover="f1();">
+        <div id="d11"></div>
+    </div>
+    <br /><br />
+     <div id="d2" onmouseenter="f2();">
+        <div id="d22"></div>
+    </div>
+</body>
+</html>

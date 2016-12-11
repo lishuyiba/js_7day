@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!-- 
+        confirm  删除确认
+        navigate 导向另外一个网页
+        navigator 获取客户端浏览器的信息
+        location 跳转网页
+        setInterval 定时器（不可取消）
+
+        setTimeout 定时器（可取消）
+        clearTimeout
+     -->
+    <script type="text/javascript">
+        function del() {
+            if (window.confirm("确认删除吗？")) {
+                alert("正在删除....");
+            }
+            else {
+                alert("您取消了删除操作！");
+            }
+        };
+        function nav() {//只支持ie
+            navigate("01- 定义js事件.html");
+        };
+
+        function loca() {//支持大部分浏览器
+            location = "01- 定义js事件.html";
+        };
+
+        function userAgent() {
+            alert(navigator.userAgent);//获取到浏览器、以及操作系统的信息
+        };
+
+        var tmrId;
+        function set() {
+                tmrId = setInterval(function () {//打开定时器
+                alert("定时器弹出来了！");
+            }, 2000);
+        };
+
+        function clearTmr() {
+            if (tmrId) {//判断是否被赋值
+                clearInterval(tmrId);//关闭定时器
+            }
+        };
+
+        //开启定时器 让文本框的值 定时+1
+        setInterval(function () {
+            var num = window.txt.value;
+            num = parseInt(num) + 1;
+            window.txt.value = num;
+        }, 1000);
+
+        var setTimeId;
+        function setTime() {
+            setTimeId=setTimeout(function () {
+                alert("abc");
+            }, 1000);
+        };
+
+        function clearTime() {
+            clearTimeout(setTimeId);
+        };
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="删除提示" onclick="del()" />
+    <br />
+    <input type="button" name="name" value="Navigate 跳转（仅支持IE）" onclick="nav()" />
+    <br />
+    <input type="button" name="name" value="Location 跳转" onclick="loca()"/>
+    <br />
+    <input type="button" name="name" value="navigator.userAgent 获取客户端浏览器、操作系统信息" onclick="userAgent()"/>
+    <br />
+    <input type="button" name="name" value="setInterval 打开定时器" onclick="set()" />
+    <br />
+    <input type="button" name="name" value="setInterval 关闭定时器" onclick="clearTmr()"/>
+    <br /><span>总计时</span><br />
+    <input type="text" name="name" value="1" id="txt"/>
+    <br />
+    <input type="button" name="name" value="setTimeout" onclick="setTime()" />
+    <br />
+    <input type="button" name="name" value="clearTimeout" onclick="clearTime()" />
+</body>
+</html>

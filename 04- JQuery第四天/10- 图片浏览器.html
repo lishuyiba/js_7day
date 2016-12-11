@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#imgs a").click(function () {
+                //this 触发事件当前的a标签 dom对象  【共有三种对象：js对象、JQuery对象、dom对象】
+                
+                //$("body")  引号内如果是字符串，写的是标签（选择器）。
+
+                //把this转换成JQuery对象，并获取href对象。
+                //var href = $(this).attr("href");
+                //$("#i1").attr("src", href);
+
+                //$("#i1").attr("src", this.href);
+
+                //问题：错误！！！！！    JQuery对象不能访问dom对象的属性。
+                //$("#i1").src = this.hredf;
+
+                //事件响应函数中 取消后续内容的执行
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="imgs">
+        <li><a href="images/1.jpg">图片1</a></li>
+        <li><a href="images/2.jpg">图片2</a></li>
+        <li><a href="images/3.gif">图片3</a></li>
+        <li><a href="images/4.jpg">图片4</a></li>
+    </ul>
+    <img id="i1" src="#"/>
+</body>
+</html>

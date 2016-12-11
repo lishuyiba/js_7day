@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #lnk {
+            color:blue;
+            text-decoration:underline;/*下划线*/
+            cursor:pointer; /*出现鼠标小手*/
+        }
+        #lnk1 {
+            color:blue;
+            text-decoration:underline;/*下划线*/
+            cursor:pointer; /*出现鼠标小手*/
+        }
+    </style>
+    <script type="text/javascript">
+        //alert(window.location.href);//弹出浏览器地址
+        function f1() {
+            window.location.reload;//刷新网页
+        };
+
+        //ie 和chrome下使用
+        function span_click() {
+            if (window.event.altKey && window.event.ctrlKey) {//判断是否摁下了 alt + ctrl 
+                window.location.href = "01- 定义js事件.html";
+            }
+        };
+
+        //ff下使用event
+        function span_click1(e) {
+            if (e.altKey && e.ctrlKey) {//判断是否摁下了 alt + ctrl 
+                window.location.href = "01- 定义js事件.html";
+            }
+        };
+
+    </script>
+</head>
+<body>
+    <span>content</span>    
+    <br />
+    <input type="button" name="name" value="刷新网页" onclick="f1()" />
+    <br />
+    <span id="lnk" onclick="span_click()">我是超链接</span>
+    <br />
+    <span id="lnk1" onclick="span_click1(event)">ff下的超链接 event参数</span>
+
+</body>
+</html>

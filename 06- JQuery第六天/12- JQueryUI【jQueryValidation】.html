@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        /*获得光标时，文本框变 虚线*/
+        input:focus 
+        {
+            border:1px dotted black; 
+        }
+
+        /*不满足条件时，文本框变成 虚线、红色*/
+        input.error
+        {
+            border:1px dotted red; 
+        }
+
+        /*label.error
+        {
+            color:red;
+            font-style:italic;
+        }*/
+
+        /*错误label样式*/
+        label.error
+        {
+            background:url("images1/unchecked.gif") no-repeat 0px 0px;
+            padding-left:16px; /*向左*/
+            padding-bottom:2px;
+            font-weight:bold;
+            color:#EA5200;
+        }
+
+        /*正确label样式*/
+        label.checked
+        {
+            background:url("images1/checked.gif") no-repeat 0px 0px;
+        }
+
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script src="JQuery/Scripts/jquery.validate.js"></script>
+    <!--<script src="JQuery/Scripts/messages_cn.js"></script>--> <!--提示语汉化-->
+    <script type="text/javascript">
+        $(function () {
+            //使用汉化
+            //$("#f1").validate(); 
+
+            //定制
+            $("#f1").validate({
+                "messages":
+                    {
+                        //有两个条件提示的，则使用嵌套的方式
+                        //tanem、tpwd 根据id来取
+                        "tname": { "required": "用户名不能为空", "minlength": "不能少于两个字符" },
+                        "tpwd": { "required": "请输入密码", "equalTo": "两次密码不一致！" },
+                        "tmail": {"email":"邮箱格式不正确！"}
+                    },
+                //验证成功后执行
+                "success": function (label) {
+                    label.addClass("checked");
+                    //label.html("&nbsp;").addClass("checked"); //加上&nbsp为了兼容
+                    //ie6里面，如果两个label之间没有内容，则不会显示
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <form id="f1">
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td>
+                    <input id="txtName" name="tname" class="required" minlength="2" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td>
+                    <input id="txtPwd" name="tpwd" class="required"  type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td>
+                    <input id="txtPwd1" name="tpwd" class="required"  equalTo="#txtPwd" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>邮件</td>
+                <td>
+                    <input id="txtMail" name="tmail" class="email" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="Submit1" type="submit" value="submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

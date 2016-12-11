@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .red
+        {
+            background-color:red;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            //  1
+            //$("input").focus(function () {//获得焦点
+            //    $(this).addClass("red").siblings().removeClass("red");
+            //}).blur(function () {//失去焦点
+
+            //})
+
+            //  2
+            $("input").focus(function () {//获得焦点
+                $(this).addClass("red");
+            }).blur(function () {//失去焦点
+                $(this).removeClass("red");
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+</body>
+</html>

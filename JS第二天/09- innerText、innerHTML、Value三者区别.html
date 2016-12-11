@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/ecmascript">
+        function f1() {
+            var div = document.getElementById("d1");
+            //innerText会对html的特殊字符转义
+            //div.innerText = "<font color='red'>都说</font><b>传智播客</b>好";
+
+            //会移除html的标签 获取纯文本
+            alert(div.innerText);
+
+        }
+        function f2() {
+            var div = document.getElementById("d1");
+            div.innerHTML = "<font color='red'>都说</font><b>传智播客</b>好";
+
+            //会把html字符输出
+            alert(div.innerHTML);
+        }
+
+        function f3() {
+            var txt = document.getElementById("t1").value;
+            alert(txt);
+        }
+        
+        //使用 innerText 不能获取 text 标签值
+        function f4() {
+            var txt = document.getElementById("t2").innerText;//结果：为空
+            alert(txt);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="d1"><font color='red'>都说</font><b>传智播客</b>好<input type="text" /></div>
+    <input type="button" onclick="f1()" value="innerText"/><br />
+    <input type="button" onclick="f2()" value="innerHTML" /><br />
+
+    
+    
+    <textarea id="t1">content</textarea><br />
+    <input id="t2" type="text" name="name" value="123" />
+    <input type="button" name="name" value="innerText 和 value 1" onclick="f3()"/>
+    <input type="button" name="name" value="innerText 和 value 2" onclick="f4()"/>
+
+
+    <!--
+        <div>ab<a></a>cd</div>
+
+        对于上面的div：
+        innerText 设置div里面的内容，会覆盖之前的内容。      在ie和ff里面是不一样的
+        innerHTML 不会覆盖之前的内容，即 “ab<a></a>cd”     标准，支持ie、ff、chrome
+
+        value
+        只有表单元素才有value属性，value就是用来获取、设置表单元素的值。
+
+        -->
+
+</body>
+</html>

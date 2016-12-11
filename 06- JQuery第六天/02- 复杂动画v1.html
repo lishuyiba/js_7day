@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #d1
+        {
+            width:200px;
+            height:200px;
+            position:absolute;
+            background-color:red;
+            left:10px;/*设置后，动画的起始位置从该点开始*/
+            top:50px;/*设置后，动画的起始位置从该点开始*/
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                //$("#d1").animate({ "left": 500, "top": 500 }, 5000); //设置位置
+                $("#d1").animate({ "width": 0, "height": 0,"opacity":0 }, 5000); //设置大小 透明度
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="动画" />
+    <div id="d1"></div>
+</body>
+</html>

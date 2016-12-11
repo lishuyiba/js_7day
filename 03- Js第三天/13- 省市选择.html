@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        var json = {
+            "河北省": ["邯郸市", "石家庄", "保定市", "邢台市"],
+            "河南省": ["郑州市", "安阳市", "登封市"],
+            "山东省": ["济南市", "青岛市"]
+        };
+
+        window.onload = function () {
+            getProvince();
+            getCity();
+        }
+
+        //加载省
+        function getProvince() {
+            var pro = document.getElementById("province");
+            for (var key in json) {
+                var option = document.createElement("option");
+                option.innerHTML = key;
+                option.value = key;
+                pro.appendChild(option);
+            }
+        }
+
+        //加载市
+        function getCity() {
+            var pro = document.getElementById("province");
+            var city = document.getElementById("city");
+            //alert(pro.value);//当前选中的省
+
+            //在获取该省下所有市之前，清空上一次所有的市
+            //city.innerHTML = ""; //这种写法是不负责的，因为这样清空是不能把绑定的事件清空掉。
+            var num = city.children.length;//获取标签为city下所有的子节点（也即是每一个市）
+            for (var i = 0; i < num; i++) {
+                //city.removeChild(city.children[i]);//错误
+                city.removeChild(city.children[0]); //因为是从索引为0的开始清空
+            }
+
+
+            var cities = json[pro.value];//获取该省下所有的市
+            //alert(cities);
+            
+            for (var i = 0; i < cities.length; i++) {
+                var option = document.createElement("option");
+                option.innerHTML = cities[i];
+                option.value = cities[i];
+                city.appendChild(option);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <br />
+    <select id="province" onchange="getCity()">
+
+    </select>
+    <select id="city">
+
+    </select>
+</body>
+</html>

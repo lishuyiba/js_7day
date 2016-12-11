@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        #qqTab ul
+        {
+            margin:0px;
+            padding:0px;/*去掉小点*/
+        }
+        #qqTab li
+        {
+            list-style-type:none;
+            width:100px;
+            text-align:center;
+            background-color:whitesmoke;
+        }
+        #qqTab h3
+        {
+            background-color:gray;
+            margin:0px;
+            padding:0px;
+            width:100px;
+            cursor:pointer;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //1 把好友列表隐藏
+            //$("#qqTab h3 + ul").css("display", "none"); //样式 方式
+            $("#qqTab h3").next("ul").css("display", "none");//节点遍历方式
+
+            //2 给h3注册事件
+            $("#qqTab h3").click(function () {
+                //点好友分组，显示或隐藏该分组下的好友
+                $(this).next("ul").slideToggle(500); //slideToggle方法
+            })
+
+            //3 默认让 我的好友 显示
+            $("#qqTab h3:first").click();
+        })
+    </script>
+</head>
+<body>
+    <div id="qqTab">
+        <h3>我的好友</h3>
+        <ul>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>赵信</li>
+        </ul>
+        <h3>陌生人</h3>
+        <ul>
+            <li>蛮子</li>
+            <li>猴子</li>
+            <li>瑞文</li>
+            <li>瞎子</li>
+        </ul>
+        <h3>黑名单</h3>
+        <ul>
+            <li>鱼人</li>
+            <li>打野</li>
+            <li>中路</li>
+        </ul>
+    </div>
+</body>
+</html>

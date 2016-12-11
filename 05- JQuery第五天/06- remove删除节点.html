@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(":button[value=delete]").click(function () {
+                //删除最后一个节点
+                //$("#mv li:last").remove();
+
+                //删除后又追加到第一项
+                //var $li = $("#mv li:last").remove();
+                //$("#mv").prepend($li);
+
+                //清空最后一项
+                $("#mv li:last").empty();
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="mv">
+        <li>西施</li>
+        <li>贵妃</li>
+        <li>貂蝉</li>
+        <li>妹子</li>
+        <li>凤姐</li>
+    </ul>
+    <input type="button" value="delete" />
+</body>
+</html>

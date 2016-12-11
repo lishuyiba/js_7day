@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #qqTap
+        {
+            width:500px;
+            height:200px;
+            border:solid 1px gray;
+        }
+            #qqTap ul
+            {
+                margin:0px;
+                height:20px;
+                background-color:#f1f1f1;
+                border-bottom:solid 1px gray; /*标题栏 横线*/
+            }
+                #qqTap ul li
+                {
+                    list-style-type:none; /*去掉标记  黑点 */
+                    float:left; /*把树立的文本 设置成 一行*/
+                    width:80px;
+                    cursor:pointer;
+                    text-align:center;
+                }
+        .activeTab
+        {
+            background-color:red;
+            border-bottom-width:0px;
+        }
+    </style>
+    <script type="text/javascript">
+        //window.onload = function () {
+        //    var div = document.getElementById("qqTap");
+        //    var ul = div.firstChild;//div里面只有一项 ul
+        //    var lists = ul.children;
+        //    for (var i = 0; i < lists.length; i++) {
+        //        lists[i].onmouseover = function () {
+        //            for (var i = 0; i < lists.length; i++) {
+        //                lists[i].removeAttribute("class");
+        //            }
+        //            this.className = "activeTab";
+        //        }
+        //    }
+           
+        //}
+        window.onload = function () {
+            var div = document.getElementById("qqTab");
+            var ul = div.firstChild;
+            var lists = ul.children;
+            //给所有的li注册事件
+            for (var i = 0; i < lists.length; i++) {
+                lists[i].onmouseover = function () {
+                    //当前项高亮。其他项还原
+                    for (var i = 0; i < lists.length; i++) {
+                        lists[i].removeAttribute("class");
+                    }
+                    this.className = "activeTab";
+
+                    //隐藏其它项的新闻
+                    var tabs = document.getElementById("tabs");
+                    var divs = tabs.children;
+                    for (var i = 0; i < divs.length; i++) {
+                        divs[i].style.display = "none";
+                    }
+
+                    //显示当前项的新闻
+                    var id = this.getAttribute("name");
+                    var page = document.getElementById(id);
+                    page.style.display = "block";
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="qqTap">
+        <ul>
+            <li name="tabPage1" class="activeTab">国内新闻</li>
+            <li name="tabPage2" >国际新闻</li>
+            <li name="tabPage3" >火星新闻</li>
+        </ul>
+        <div id="tabs">
+            <div id="tabPage1">
+                国内新闻1111111111111111111
+            </div>
+            <div id="tabPage2" style="display:none">
+                国际新闻22222222222222222
+            </div>
+            <div id="tabPage3" style="display:none">
+                火星新闻333333333333333333
+            </div>
+        </div>
+    </div>
+</body>
+</html>

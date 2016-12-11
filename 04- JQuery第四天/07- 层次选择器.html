@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //找到所有的p 子p  子子p
+            //$("#wrap p").css("background-Color", "red");
+
+            //找到直接子元素
+            //$("#wrap > p").css("background-Color", "red");
+
+            //找到之后的紧邻第一个div
+            //$("#wrap + div").css("background-Color", "red");
+
+            //找到之后的所有div
+            $("#wrap ~ div").css("backgroundColor", "red");
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">我是div1
+        <p>我是外层p</p>
+        <div>
+            <p>我是内层p</p>
+        </div>
+    </div>
+    <div>我是div2
+        <p>我是div2里面的p</p>
+    </div>
+    <p>pppppp</p>
+    <div>111111111111</div>
+    <div>222222222222</div>
+</body>
+</html>

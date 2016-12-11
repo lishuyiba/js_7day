@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        body
+        {
+            padding: 0px;
+            margin: 0px;
+            background: url(images/bg3.jpg) no-repeat;
+        }
+
+        #wrapper
+        {
+            min-height: 600px;
+        }
+
+        #navigation
+        {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+            width: 120px;
+            list-style: none;
+        }
+
+            #navigation li
+            {
+                position: relative;
+                float: left;
+                margin: 0px;
+                padding: 0px;
+                height: 50px;
+                width: 120px;
+            }
+
+                #navigation li a
+                {
+                    position: absolute;
+                    display:block;
+                    top: 0px;
+                    left: 0px;
+                    height: 50px;
+                    width: 120px;
+                    line-height: 50px;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+
+            #navigation .nav0 a
+            {
+                background: #F50065;
+            }
+
+            #navigation .nav1 a
+            {
+                background: #D60059;
+            }
+
+            #navigation .nav2 a
+            {
+                background: #B0004A;
+            }
+
+            #navigation .nav3 a
+            {
+                background: #F26B00;
+            }
+
+            #navigation .nav4 a
+            {
+                background: #D75F00;
+            }
+
+            #navigation .nav5 a
+            {
+                background: #B24F00;
+            }
+
+            #navigation .nav6 a
+            {
+                background: #6E8F00;
+            }
+
+            #navigation .nav7 a
+            {
+                background: #607D00;
+            }
+
+            #navigation .nav8 a
+            {
+                background: #496100;
+            }
+
+            #navigation .nav9 a
+            {
+                background: #007f9f;
+            }
+
+            #navigation .nav10 a
+            {
+                background: #006b87;
+            }
+
+            #navigation .nav11 a
+            {
+                background: #005065;
+            }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $lists = $("#navigation li:not(.current_page)");
+            //$lists.children("a").css("left", "-120");
+            //alert($lists);
+            $lists.children("a").css("left", "-120");//默认让a标签在窗体外
+            $lists.hover(function () {
+                $(this).children("a").animate({ "left": 0 }, "fast");
+            }, function () {
+                $(this).children("a").animate({ "left": -120 }, "fast");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul id="navigation">
+            <li class="nav0 current_page"><a href="#">我的日志</a></li><!--current_page标记的作用-->
+            <li class="nav1"><a title="资源下载" href="#">资源下载</a></li>
+            <li class="nav2"><a title="相册" href="#">相册</a></li>
+            <li class="nav3"><a title="一起走到" href="#">一起走到</a></li>
+            <li class="nav4"><a title="从明天起" href="#">从明天起</a></li>
+            <li class="nav5"><a title="纸飞机" href="#">纸飞机</a></li>
+            <li class="nav6"><a title="下一站" href="#">下一站</a></li>
+            <li class="nav7"><a title="门" href="#">门</a></li>
+            <li class="nav8"><a title="人文知识" href="#">人文知识</a></li>
+            <li class="nav9"><a title="标签记录" href="#">标签记录</a></li>
+            <li class="nav10"><a title="友情链接" href="#">友情链接</a></li>
+            <li class="nav11"><a title="联系我们" href="#">联系我们</a></li>
+        </ul>
+    </div>
+</body>
+</html>

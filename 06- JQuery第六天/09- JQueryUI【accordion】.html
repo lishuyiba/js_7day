@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #accordion
+        {
+            width:600px;
+            height:100px;
+            font-size:15px;
+        }
+    </style>
+    <link href="JQuery/css/ui-lightness/jquery-ui-1.8.12.custom.css" rel="stylesheet" />
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script src="JQuery/Scripts/jquery-ui-1.8.12.custom.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion").accordion({ header: "h3" });//别忘了指明标题“header:"h3"”
+        })
+    </script>
+</head>
+<body>
+    <div id="accordion">
+        <div>
+            <h3><a href="#">标题一</a></h3>
+            <div>内容11111</div>
+        </div>
+        <div>
+            <h3><a href="#">标题二</a></h3>
+            <div>内容22222</div>
+        </div>
+        <div>
+            <h3><a href="#">标题三</a></h3>
+            <div>内容33333</div>
+        </div>
+    </div>
+</body>
+</html>

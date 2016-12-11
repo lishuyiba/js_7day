@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .black
+        {
+            color:black;
+        }
+        .gray
+        {
+            color:gray;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#txtSearch").focus(function () {
+                if ($(this).val() == "请输入搜索关键字") {
+                    //$(this).val("").addClass("class", "black"); //容易出错！！！ 使用addClass属性会有两个值
+                    $(this).val("").attr("class","black");
+                }
+            }).blur(function () {
+                if ($(this).val().length == 0 || $(this).val() == "请输入搜索关键字")
+                {
+                    //addClass 同上
+                    //使用attr 会覆盖掉前一种属性的值
+                    $(this).val("请输入搜索关键字").attr("class","gray");
+                }
+                else {
+                    
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="txtSearch" type="text" value="请输入搜索关键字" class="gray" />
+    <input id="btn" type="button" value="搜索" />
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+   <style type="text/css">
+        #d1
+        {
+            width:200px;
+            height:200px;
+            border:solid 1px  red;
+           /* display:none;*/
+            /*display:none;/*不显示*/
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                links[i].onmouseover = function () {
+
+
+                    var div = document.getElementById("d1");
+                    div.style.top = event.clientY + "px";
+                    div.style.left = event.clientX + "px";
+                    //当style.display = "" 没有设置
+                    div.style.display = "block";
+                }
+
+                links[i].onmouseout = function () {
+                    var div = document.getElementById("d1");
+                    div.style.display = "none";
+                }
+            }
+
+        }
+
+
+        function f1() {
+            
+            //注意：
+            //“div.style.width = "300px";”读取的是“<div id="d1" style="width:200px">”里面的内容
+
+            //var div = document.getElementById("d1");
+            //div.style.width = "300px";
+            //div.style.height = "300px";
+
+            var div = document.getElementById("d1");
+            var width = div.style.width;
+            var height = div.style.height;
+
+            //style="width:200px;height:200px;"要先在行内设置，否则不起效果。
+            div.style.width = parseInt(width) + 20 + "px";
+
+            div.style.height = parseInt(height) + 20 + "px";
+
+
+            //获取元素的宽度
+            //alert(div.clientWidth);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="改变div大小" onclick="f1()" /><br />
+    <a href="javascript:void(0)">美女1</a><br /><br /><br /><br />
+    <a href="javascript:void(0)">美女2</a><br /><br /><br /><br />
+    <a href="javascript:void(0)">美女3</a><br /><br /><br /><br />
+    <div id="d1" style="width:200px;height:200px;">
+        详细内容
+    </div>
+</body>
+</html>

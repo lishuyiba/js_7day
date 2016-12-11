@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //                  first
+            //找input标签 第一个
+            //$("input:first").css("background-color", "red");
+
+            //                  last
+            //找input标签 最后一个
+            //$("input:last").css("background-color", "red");
+
+            //                  not
+            //不包含id为t1
+            //$("input:not(#t1)").css("background-color", "red");
+
+            //不包含样式为myClass
+            //$("input:not(.myClass)").css("background-color", "red");
+
+            //不包含样式为myClass，也不包含id为t1
+            //$("input:not(.myClass):not(#t1)").css("background-color", "red");
+
+            //                  odd、even
+            //odd(单词 奇数)偶数项
+            //even（单词 偶数）奇数项
+            //$("input:odd").css("background-color", "red");
+            //$("input:even").css("background-color", "gray");
+
+            //                  eq、gt、lt
+            //eq 等于
+            //gt 大于
+            //lt 小于
+            //$("input:eq(2)").css("background-color", "red");
+            //$("input:gt(2)").css("background-color", "red");
+            //$("input:lt(2)").css("background-color", "red");
+
+            //找所有input标签的最后三项（找到索引后也可以用nextAll）
+            //var num = $("input").length - 4;
+            //$("input:gt(" + num + ")").css("background-color", "red");
+            
+            //找所有input标签的最后三项（nextAll实现）
+            //var num = $("input").length - 4;
+            //$("input:eq(" + num + ")").nextAll().css("background-color", "red");
+
+        })
+    </script>
+</head>
+<body>
+    <input id="t1" type="text" /><br />
+    <input class="myClass" type="text" /><br />
+    <input class="myClass" type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        //使用Dom方式赋值 
+        //window.onload = function () {
+        //    var div = document.getElementById("d1");
+        //    //div.innerHTML = "abc";
+        //    //div.html("abc");//Dom对象不能使用JQuery对象的方法或属性。
+
+        //    //把dom对象转换为JQuery对象
+        //    var $div = $(div);
+        //    $div.html("abc");
+        //}
+        
+        //使用JQuery方式进行赋值 
+        $(function () {
+            var $div = $("#d1");
+            //$div.html("abc");
+            //$("#d1").html("abc");
+            //$div.innerHTML = "abc"; JQuery对象不能使用dom对象的方法或属性。
+
+            //把JQuery对象转换成dom对象
+            //包装集： dom对象包装起来的集合 
+            //JQuery里面是一个dom的集合，而dom是JQuery集合里面的每一项。
+            //var div = $div[0];//一样
+            var div = $div.get(0);//一样
+            div.innerHTML = "abc";
+        });
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

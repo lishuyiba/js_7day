@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #search
+        {
+            color:gray;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var t = document.getElementById("search");
+            //获得光标
+            t.onclick = function () {
+                if (this.value == "请输入搜索关键字") {
+                    this.value = "";
+                    this.style.color = "black";
+                }
+            }
+            //失去光标
+            t.onblur = function () {
+                if (this.value.length == 0 || this.value == "请输入搜索关键字") {
+                    this.value = "请输入搜索关键字";
+                    this.style.color = "gray";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="search" type="text" value="请输入搜索关键字" />
+    <input type="button" value="搜索" />
+</body>
+</html>

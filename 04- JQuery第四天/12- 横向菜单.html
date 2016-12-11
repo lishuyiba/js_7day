@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        *
+        {
+            margin:0px; 
+            padding:0;
+
+        }
+        #menu
+        {
+            list-style-type:none;
+            margin-top:50px;
+            margin-left:100px;
+        }
+        #menu li
+        {
+            float:left; /*想做浮动【横向显示】*/
+            width:100px; /*每个li之间的宽度*/
+            height:30px;
+            background-color:gray; /*背景颜色*/
+            text-align:center;
+            cursor:pointer;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#menu li").click(function () {
+                //alert("aa");
+                //链式编程
+                $(this).css("background-color", "red").siblings().css("background-color", "gray");
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="menu">
+        <li>首页</li>
+        <li>博客</li>
+        <li>相册</li>
+        <li>关于</li>
+    </ul>
+</body>
+</html>

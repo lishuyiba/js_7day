@@ -1,0 +1,18 @@
+﻿ .holder
+        {
+            width:300px;
+            height:200px;
+            background-color:Red;
+            position:fixed;
+            display:none;
+            z-index:100;
+        }
+        
+        .cover
+        {
+            background-color:Yellow;
+            filter:alpha(opacity=50);
+            opacity:0.5;
+            position:fixed;
+            
+        }

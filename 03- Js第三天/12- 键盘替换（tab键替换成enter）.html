@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        //键盘码和ASCII码是不一样的！！！！！！
+
+        //document.onkeydown = function () {
+        //    //alert(event.keyCode); //获取摁下的键盘 “ASCII”
+        //    if (event.keyCode == 13) {
+        //        event.keyCode == 9;
+        //    }
+        //}
+        document.onkeydown = function () {
+            //替换键盘
+            //            if (event.keyCode == 13) {
+            //                event.keyCode = 9;
+            //            }
+
+            //回车 自动提交
+            if (event.keyCode == 13) {
+                var btn = document.getElementById("btn");
+
+                btn.click();
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input type="text" /><br />
+    <input id="btn" type="button" value="click" onclick="alert('您已按下回车键！')" />
+</body>
+</html>

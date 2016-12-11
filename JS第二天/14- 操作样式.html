@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!--
+        操作样式的三种方式：
+        第一、行内
+        第二、变量嵌入（通过style）
+        第三、外部引用
+
+        -->
+    <style type="text/css">
+        .cls {
+            width:200px;
+            height:200px;
+            background-color:red;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            //第一种 设置类样式
+            //document.getElementById("d1").className = "cls";
+
+            //第二种 设置行内样式
+            document.getElementById("d1").style.width = "200px";
+            document.getElementById("d1").style.height = "200px";
+            document.getElementById("d1").style.backgroundColor = "blue";
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+</body>
+</html>

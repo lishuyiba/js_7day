@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script src="JQuery/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var oldDate = $.cookie("date");
+            if (oldDate) {
+                $("#date").html("当前时间：" + oldDate);
+            }
+            else {
+                $.cookie("date", new Date(), { expires: 7 });//保存cookie
+            }
+
+            $("#oldDate").html("上次访问时间：" + oldDate);
+            $("#date").html("当前系统时间：" + new Date());
+        })
+    </script>
+</head>
+<body>
+    <span id="oldDate"></span>
+    <br />
+    <br />
+    <br />
+    <span id="date"></span>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        document.onmousemove = function () {
+            //鼠标在文档上的位置
+            //document.title = window.event.clientX + "==" + window.event.clientY;
+            //鼠标在屏幕上的位置
+            //document.title = window.event.screenX + "==" + window.event.screenY;
+            //相对于事件源的位置
+            document.title = window.event.offsetX + "==" + window.event.offsetY;
+
+        };
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="相对于事件源的位置" />
+</body>
+</html>

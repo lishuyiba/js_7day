@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!--<style type="text/css">
+        div {
+            width:200px;
+            height:200px;
+            background-color:red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            //设置透明度
+            document.getElementById("d1").style.filter = "alpha(opacity=50)";
+        }
+        var num = 100;
+        function f1() {
+            //var alpha = document.getElementById("d1").style.filter.replace("alpha(opacity=", "").replace(")", "");
+            //var num = 100;
+            //setInterval(function () {
+            //    num = parseInt(alpha)-10;
+            //}, 1000);
+            //document.getElementById("d1").style.filter = "alpha(opacity=" + num + ")";
+
+            num = num - 10;
+            document.getElementById("d1").style.filter = "alpha(opacity=" + num + ")";
+        }
+    </script>-->
+
+    <style type="text/css">
+        div
+        {
+            width:200px;
+            height:200px;
+            background-color:Red;    
+           
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("d1").style.filter = "alpha(opacity=100)";
+        }
+        var num = 100;
+        function f1() {
+            //            num = num - 10;
+            //            document.getElementById("d1").style.filter = "alpha(opacity="+ num +")";
+
+            alert(document.getElementById("d1").style.filter.replace("alpha(opacity=", "").replace(")", ""));
+
+        }
+    </script>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+    <input type="button" onclick="f1()" value="click"/>
+</body>
+</html>

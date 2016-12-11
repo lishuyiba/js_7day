@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            setCount();
+        })
+        var count = 10;
+        var tmrId = setInterval("setCount()", 1000);
+        function setCount() {
+            if (count > 0) {
+                $("#btn").val("请仔细阅读协议（" + count + "）");
+                count--;
+            }
+            else {
+                $("#btn").val("同意").attr("disabled",false);
+                clearInterval(tmrId);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="同意" disabled="disabled" />
+</body>
+</html>

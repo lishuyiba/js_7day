@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #tooltips
+        {
+            width:200px;
+            height:200px;
+            border:solid 1px red;
+            position:absolute;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("a").hover(function (e) {
+                var $div = $("<div id='tooltips'>名称:"+$(this).html()+"<br />"+"站点:"+$(this).val("href")[0]+""+"</div>");
+                $div.css({ "left": e.pageX, "top": e.pageY });
+                $("body").append($div);
+            }, function () {
+                var $div = $("#tooltips");
+                if ($div) {
+                    $div.remove();
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a><br /><br />
+    <a href="http://www.google.com">谷歌</a><br /><br />
+</body>
+</html>

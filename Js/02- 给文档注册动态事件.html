@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function f1() {
+            alert("f1第一次弹出");
+            alert("f1第二次弹出");
+        };
+
+        function f2() {
+            alert("f2第一次弹出");
+            alert("f2第二次弹出");
+        };
+        //动态注册多个事件   attachEvent和addEventListener
+        //区别：一个onclick、一个click 执行的顺序不一样。
+
+        //只有ie支持
+        document.attachEvent("onclick", f1);
+        document.attachEvent("onclick", f2);
+
+        //ff chrom
+        document.addEventListener("click", f1);
+        document.addEventListener("click", f2);
+    </script>
+</head>
+<body>
+    <!-- 点击按钮 动态给文档注册单击事件 -->
+    <input type="button" value="click" onclick="document.onclick = f1" />
+    <input type="button" value="click" onclick="document.onclick = f1; document.onclick = f2" />
+</body>
+</html>

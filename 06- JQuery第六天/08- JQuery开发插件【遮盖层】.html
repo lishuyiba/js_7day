@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="myCss/myCss.css" rel="stylesheet" />
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+
+    <script src="myScript/myCover.js"></script><!-- 注意！！！ 由于$的问题，引用的JS文件要在原JS包之后 -->
+    <script type="text/javascript">
+
+        //function showCover() {
+            
+
+        //}
+
+        //function closeCover() {
+            
+            
+        //}
+
+        $(function () {
+            $(":button[value=login]").click(function () {
+                $(".holder").showCover();
+            });
+
+            $("#spanClose").click(function () {
+                $(".holder").closeCover();
+            });
+        })
+
+    </script>
+</head>
+<body>
+    <input type="button" onclick="showCover()" value="login" />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="holder">
+        <div style="text-align:right;cursor:pointer;">
+            <!--<input type="button" onclick="closeCover()" value="close" />-->
+            <span id="spanClose" onclick="closeCover()">关闭</span>
+        </div>
+        <br />
+        <div style="text-align:center;">
+            用户：<input type="text" />
+            <br />
+            <br />
+            密码：<input type="text" /><br />
+        </div>
+        <br />
+        <br />
+        <div style="text-align:right; width:250px;">
+            <input type="button" value="登陆" onclick="alert('登陆成功！');"/>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script> <!--先放原js文件-->
+    <!--<script src="Scripts1.4/jsExt.js"></script> <!--再放扩展的js原文   原因：需要使用到 $ -->
+    <script type="text/javascript">
+        //给$ 增加了一个“静态方法”
+        $.extend({
+            "max": function (x,y) {
+                return x ? y : x, y;
+            }, "min": function () {
+
+            }
+        })
+
+        //alert($.max(4, 5));
+
+        //扩展    ----实例方法-----
+        $.fn.extend({
+            "checked": function () {
+                $(this).attr("checked", true);//选中
+            }, "unchecked": function () {
+                $(this).attr("checked", false);//不选中
+            }
+        })
+
+        //测试
+        $(function () {
+            $("#btnOK").click(function () {
+                $("#c").checked();//调用扩展的 checked 实例方法
+            })
+            $("#btnCancel").click(function () {
+                $("#c").unchecked();
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="c" type="checkbox" />
+    <input id="btnOK" type="button" value="选中" />
+    <input id="btnCancel" type="button" value="取消" />
+</body>
+</html>

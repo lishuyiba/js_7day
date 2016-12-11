@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        *
+        {
+            font-size:13px;
+            margin:0px;
+            padding:0px;
+        }
+        #menu
+        {
+            margin-left:200px;
+            margin-top:200px;
+        }
+            #menu > ul > li
+            {
+                width:80px;
+                list-style-type:none; /*去掉前面的标记*/
+                float:left;
+                background-color:yellow;
+                margin-left:10px;
+                text-align:center;
+                cursor:pointer;
+            }
+            #menu ul ul
+            {
+                list-style-type:none; /*去掉前面的标记*/
+                background-color:gray;
+            }
+        .hide
+        {
+            display:none;
+        }
+        .show
+        {
+            display:block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            //窗体加载时让子的ul隐藏
+            var parent = document.getElementById("parent");
+            var uls = parent.getElementsByTagName("ul");
+            for (var i = 0; i < uls.length; i++) {
+                //uls[i].style.display = "none";
+                uls[i].className = "hide";//加载class样式表
+            }
+
+            //给父级的li注册事件
+            for (var i = 0; i < parent.children.length; i++) {//循环id为parent的ul
+                var li = parent.children[i];//通过ul获取里面的每一个li
+                li.onmousemove = function () {//在给每一个li注册事件
+                    //alert();
+                    //this.className = "show";
+                    this.children[0].className = "show";//this表示：当前的li，它里面只有一个节点（即ul），所以是children[0] ，找到它了以后，把className设置样式表
+                }
+               li.onmouseout = function () {
+                   //this.className = "hide";
+                   this.children[0].className = "hide";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="menu">
+        <ul id="parent">
+            <li>
+                父级菜单一
+                  <ul>
+                    <li>
+                        子菜单一
+                    </li>
+                    <li>
+                        子菜单二
+                    </li>
+                    <li>
+                        子菜单三
+                    </li>
+                </ul>
+            </li>
+             <li>
+                父级菜单二
+                  <ul>
+                    <li>
+                        子菜单一
+                    </li>
+                    <li>
+                        子菜单二
+                    </li>
+                    <li>
+                        子菜单三
+                    </li>
+                </ul>
+            </li>
+             <li>
+                父级菜单三
+                  <ul>
+                    <li>
+                        子菜单一
+                    </li>
+                    <li>
+                        子菜单二
+                    </li>
+                    <li>
+                        子菜单三
+                    </li>
+                </ul>
+            </li>
+             <li>
+                父级菜单四
+                  <ul>
+                    <li>
+                        子菜单一
+                    </li>
+                    <li>
+                        子菜单二
+                    </li>
+                    <li>
+                        子菜单三
+                    </li>
+                </ul>
+            </li>
+             <li>
+                父级菜单五
+                  <ul>
+                    <li>
+                        子菜单一
+                    </li>
+                    <li>
+                        子菜单二
+                    </li>
+                    <li>
+                        子菜单三
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

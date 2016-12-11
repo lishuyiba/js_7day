@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var tb = document.getElementById("tb");
+            var rows = tb.getElementsByTagName("tr");
+            for (var i = 0; i < rows.length; i++) {
+                if (i % 2 == 0) {
+                    //奇数行的颜色 （因为0也可以整除，所以第一行是红色）
+                    rows[i].style.backgroundColor = "red";
+                }
+                else {
+                    rows[i].style.backgroundColor = "green";
+                }
+                //鼠标经过时
+                var bgColor;
+                rows[i].onmouseover = function () {
+                    bgColor=this.style.backgroundColor;
+                    this.style.backgroundColor = "yellow";
+                }
+                //鼠标离开时
+                rows[i].onmouseout = function () {
+                    this.style.backgroundColor = bgColor;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table border="1" id="tb">
+        <tr>
+            <td>
+                111111111111111111111111111111111111111
+            </td>
+        </tr>
+        <tr>
+            <td>
+                222222222222222222222222222222222222222
+            </td>
+        </tr>
+        <tr>
+            <td>
+                111111111111111111111111111111111111111
+            </td>
+        </tr>
+        <tr>
+            <td>
+                222222222222222222222222222222222222222
+            </td>
+        </tr>
+        <tr>
+            <td>
+                111111111111111111111111111111111111111
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

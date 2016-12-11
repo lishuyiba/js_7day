@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            border:solid 1px red;
+        }
+        #img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var div1 = document.getElementById("d1");
+            div1.style.display = "none";
+            //第一张
+            var a = document.getElementById("a");
+            a.onmouseover = function () {
+                div1.style.display = "";
+                var img = document.getElementById("img");
+                img.src = "image/1.jpg";
+            }
+            a.onmouseout = function () {
+                div1.style.display = "none";
+            }
+
+            //第二张
+            var a = document.getElementById("a1");
+            a.onmouseover = function () {
+                div1.style.display = "";
+                var img = document.getElementById("img");
+                img.src = "image/2.jpg";
+            }
+            a.onmouseout = function () {
+                div1.style.display = "none";
+            }
+            //第三张
+            var a = document.getElementById("a2");
+            a.onmouseover = function () {
+                div1.style.display = "";
+                var img = document.getElementById("img");
+                img.src = "image/3.jpg";
+            }
+            a.onmouseout = function () {
+                div1.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <a id="a" href="javascript:void(0)">美女1</a>
+    <a id="a1" href="javascript:void(0)">美女2</a>
+    <a id="a2" href="javascript:void(0)">美女3</a>
+    <div id="d1">
+        <img id="img" src="#"/>
+    </div>
+</body>
+</html>

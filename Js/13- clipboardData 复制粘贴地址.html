@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function f1() {
+            var txt = document.getElementById("txt").value;
+            window.clipboardData.setData("text", txt);
+
+            document.getElementById("span").innerHTML = "复制成功！";
+        };
+
+        
+
+    </script>
+</head>
+<body>
+    <input id="txt" type="text" value="http://www.baidu.com" />
+    <input type="button" value="复制 仅支持IE" onclick="f1()" /><span id="span"></span><br />
+
+    <!--禁止 复制、剪切、拖动-->
+    <input id="num1" type="text" value=" " oncopy="alert('禁止复制');return false" oncut="alert('禁止剪切');return false"/><br />
+    <input id="num2" type="text" value=" " oncopy="alert('禁止复制');return false" oncut="alert('禁止剪切');return false"/><br />
+
+</body>
+</html>

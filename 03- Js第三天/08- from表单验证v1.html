@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //var btn = document.getElementById("btn");
+            //btn.click();
+
+            //winform中类似的操作
+            //btn.performClick();
+
+            //光标离开文本框 自动提交表单
+            var t = document.getElementById("txt");
+            t.onblur = function () {
+                var form = document.getElementById("f1");
+                if (checkInput()) {
+                    form.submit();
+                }
+                
+            }
+        }
+        function checkInput() {
+            var name = document.getElementById("txt").value;
+            if (name.length==0) {
+                alert("用户名不能为空！")
+                document.getElementById("txt").focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!--<input id="btn" type="button" value="搜索" onclick="alert('搜索')" />-->
+    <form id="f1" action="02- 登陆层.html">
+        <input id="txt" type="text" />
+        <input id="btn" type="submit" value="搜索" onclick="return checkInput()" />
+    </form>
+</body>
+</html>

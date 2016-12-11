@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .red
+        {
+            background-color:gray;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#tb tr").click(function () {
+                $(this).addClass("red").siblings().removeClass("red");
+            })
+        })
+    </script>
+</head>
+<body>
+    <table id="tb" border="1" style="cursor:pointer">
+        <tr>
+            <td>111111111111111111111111111111</td>
+            <td>111111111111111111111111111111</td>
+        </tr>
+         <tr>
+            <td>111111111111111111111111111111</td>
+            <td>111111111111111111111111111111</td>
+        </tr>
+         <tr>
+            <td>111111111111111111111111111111</td>
+            <td>111111111111111111111111111111</td>
+        </tr>
+         <tr>
+            <td>111111111111111111111111111111</td>
+            <td>111111111111111111111111111111</td>
+        </tr>
+    </table>
+</body>
+</html>

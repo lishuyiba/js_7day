@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!--
+        由内向外：
+        window.event.cancelBubble=true 取消冒泡行为。
+
+        由外向内：
+        onmouseover  不能避免冒泡。
+        onmouseenter 可以避免冒泡。
+
+        -->
+    <script type="text/javascript">
+        count = 0;
+        function f1() {
+            count++;
+            document.getElementById("d1").innerText = count;
+        }
+    </script>
+    <style type="text/css">
+        #d1,#d2
+        {
+            width:300px;
+            height:300px;
+            background-color:Red;
+        }
+        
+         #d11,#d22
+        {
+            width:100px;
+            height:100px;
+            background-color:Yellow;
+        }
+    </style>
+</head>
+<body>
+    <table onclick="alert('table onclick');">
+        <tr onclick="alert('tr onclick');">
+            <td onclick="alert('td1 onclick');"> 
+                <p onclick="alert('p onclick'); window.event.cancelBubble=true">p标签</p>
+            </td>
+            <td onclick="alert('td2 onclick');">td标签</td>
+        </tr>
+    </table>
+    <br />
+
+    <div id="d1" onmouseover="f1();">
+        <div id="d11"></div>
+    </div>
+    <br /><br />
+     <div id="d2" onmouseenter="f2();">
+        <div id="d22"></div>
+    </div>
+
+
+</body>
+</html>

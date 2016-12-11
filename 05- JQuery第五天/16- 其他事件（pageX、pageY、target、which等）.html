@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            //$(":input[value=click]").click(function (e) {
+            //    $("title").text(e.pageX + ":" + e.pageY);
+            //})
+            ////////////////////////////////////////////////
+
+            //$(":input[value=click]").click(function (e) {
+            //    document.title=(e.pageX + ":" + e.pageY);
+            //})
+
+            ////////////////////////////////////////////////
+
+            //$("#btn").click(function (e) {
+            //    //1 右键
+            //    //2 中
+            //    //3 右键
+            //    alert(e.which); 
+            //})
+            ///////////////////////////////////////////////
+
+            //获取鼠标的位置
+            $(document).mousemove(function (e) { //如果使用body  则只有鼠标在body的内容上时，才会触发。
+                document.title = (e.pageX + ":" + e.pageY);
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="click" /><br />
+    <input id="btn" type="button" value="which" />
+</body>
+</html>

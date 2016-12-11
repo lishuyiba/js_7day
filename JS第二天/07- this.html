@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function f3() {
+            alert(event.srcElement.value);
+        }
+        function f4() {
+            //事件的调用函数中this 代表window对象。
+            alert(this.value); //结果：undefined 
+        }
+
+        window.onload = function () {
+            btn5.onclick = function () {
+                alert(event.srcElement.value);
+            }
+            btn6.onclick = function () {
+                //在事件响应函数中 this 代表当前触发事件的对象
+                alert(this.value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--直接弹出-->
+    <input id="btn1" type="button" name="name" value="btn1" onclick="alert(event.srcElement.value)" /><br />
+    <input id="btn2" type="button" name="name" value="btn2" onclick="alert(this.value)" /><br />
+
+    <!--调用函数-->
+    <input id="btn3" type="button" name="name" value="btn3" onclick="f3()" /><br />
+    <input id="btn4" type="button" name="name" value="btn4" onclick="f4()" /><br />
+    <!--如果传入“this”参数 则跟“onclick="alert(this.value)" ”效果一致-->
+    <!--<input id="btn4" type="button" name="name" value="btn4" onclick="f4(this)" /><br />-->
+
+    <!--动态注册事件-->
+    <input id="btn5" type="button" name="name" value="btn5" /><br />
+    <input id="btn6" type="button" name="name" value="btn6" /><br />
+</body>
+</html>

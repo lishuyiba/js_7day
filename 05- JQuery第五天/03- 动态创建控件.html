@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //动态创建控件
+            $(":input[value=click]").click(function () {
+                var $link = $("<a id='l1' href='http://www.baidu.com'>baidu</a>");
+
+                //设置控件的样式，因为$link是返回来的对象，所以可以直接.出方法
+                $link.css("color", "red");
+                $link.click(function () {//注册事件
+                    alert("我是动态创建的");
+                    return false;
+                })
+
+                //错误！！！！ 对象还没有添加到窗体中
+                //如果把该事件添加到“$("#d1").append($link);”的后面就可以。
+                //$("#l1").click(function () {
+                //    alert("aaa");
+                //    return false;
+                //})
+
+                //追加到d1中
+                //div的结束标签之前【子元素】
+                //$("#d1").append($link); //追加到d1中
+                //$link.appendTo("#d1"); //根上面一句是一样的结果  追加到d1中
+
+                //div开始标签之前【子元素】
+                //$("#d1").prepend($link);
+
+                //div的开始标签之前 【上一个兄弟div】
+                //$("#d1").before($link);
+
+                //div的结束标签之后 【下一个兄弟div】
+                //$("#d1").after($link);
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="d1">div</div>
+
+    <input type="button" value="click" />
+</body>
+</html>

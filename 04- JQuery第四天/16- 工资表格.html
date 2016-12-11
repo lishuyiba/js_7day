@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        *
+        {
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //表头
+            //$("#salary tr:eq(0)").css("font-size", "18px").css("text-align", "center");
+            $("#salary tr:eq(0)").css({ "font-size": "30px", "text-align": "center" });
+
+            //汇总 (#salary tr:last最后一行)
+            $("#salary tr:last").css("color", "red");
+
+            //前三行（#salary tr:not(:first):lt(3)去掉表头，开始算起3行）
+            $("#salary tr:not(:first):lt(3)").css("font-size","25px");
+
+            //隔行变色
+            var str = "#salary tr:not(:first):not(:last)";
+            $(str + ":even").css("background-color", "yellow");
+
+            //光棒效果
+            var bgColor;
+            //$(str).mousemove(function () {
+            //    bgColor = $(this).css("background-color");
+            //    $(this).css("background-color", "blue");
+            //}).mouseout(function () {
+            //    //$(this).css("background-color", bgColor);
+            //    alert("aa");
+            //})
+            $(str).mouseover(function () {
+                bgColor = $(this).css("background-color");
+                $(this).css("background-color", "blue");
+            }).mouseout(function () {
+                $(this).css("background-color", bgColor);
+            })
+
+            //数据行 鼠标变小手，其实可以接着上面继续 链式编程
+            $(str).css("cursor", "pointer");
+
+            //点击数据行
+            //$(str).click(function () {
+            //    var s = $(this).text();
+            //    alert("详细内容："+s);
+            //})
+
+            ////获取所有的工资
+            //var $arr = $("#salary tr:not(:first):not(:last)");
+            ////var num = $("#salary tr:not(:first):not(:last)").length;
+            //var num = $arr.length;
+            //for (var i = 0; i < num; i++) {
+
+            //    //arr[i] i的每一项就是 dom对象 tr
+            //    //在当前的tr中找td
+            //    //$($arr[i].eq(2).text()  
+            //    //eq(2) 表示第三个td
+            //    //text() 表示它的文本值
+            //    //$里面两个参数：第一个、选择器 第二个：参数
+            //    var t = $("td", $($arr[i].eq(2).text()));
+            //    alert(t);
+            //}
+
+            //获取所有工资
+            var $arr = $("#salary tr:not(:first):not(:last)");
+            var num = $("#salary tr:not(:first):not(:last)").length;
+            var sum = 0;
+            for (var i = 0; i < num; i++) {
+                //$arr[i]  dom 对象  tr
+
+                //在当前的tr中找td
+                var t = $("td", $($arr[i])).eq(2).text();
+                //alert(t);
+                sum += parseFloat(t);
+                $("#salary tr:last td:eq(1)").text(sum);
+            }
+            
+
+        })
+    </script>
+</head>
+<body>
+    <!--tr是行 td是列-->
+    <table id="salary" width="400px" border="1">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>工资</td>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>20</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>30</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>34</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>张七</td>
+            <td>23</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>大神</td>
+            <td>35</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>小编</td>
+            <td>26</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>汇总</td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+</body>
+</html>

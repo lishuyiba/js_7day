@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function f1() {
+            var name = document.getElementById("txtName").value;
+            var content = document.getElementById("txtContent").value;
+
+            //获取table并创建tr标签 添加到table中
+            var table = document.getElementById("tb");
+            var row = document.createElement("tr");
+            table.appendChild(row);
+
+            //昵称 行
+            var td = document.createElement("td");
+            td.innerText = name;
+            row.appendChild(td);
+
+            //评论内容 行
+            td = document.createElement("td");
+            td.innerText = content;
+            row.appendChild(td);
+        }
+    </script>
+</head>
+<body>
+    <table id="tb">
+        <tr>
+            <td>猫猫：</td><td>沙发也！</td>
+        </tr>
+    </table>
+    <br />
+    昵称：<input id="txtName" type="text"  /><br />
+    内容：<textarea id="txtContent"></textarea><br />
+    <input type="button" value="评论" onclick="f1()"/>
+</body>
+</html>

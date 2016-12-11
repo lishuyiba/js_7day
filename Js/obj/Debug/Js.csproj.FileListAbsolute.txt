@@ -1,0 +1,5 @@
+D:\Js\JavaScript练习\Js\bin\Js.dll
+D:\Js\JavaScript练习\Js\bin\Js.pdb
+D:\Js\JavaScript练习\Js\obj\Debug\Js.csprojResolveAssemblyReference.cache
+D:\Js\JavaScript练习\Js\obj\Debug\Js.dll
+D:\Js\JavaScript练习\Js\obj\Debug\Js.pdb

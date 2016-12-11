@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        *
+        {
+            margin:0px;
+            padding:0;
+        }
+        #rating
+        {
+            list-style-type:none; /*去掉黑点*/
+            margin:50px;
+        }
+            #rating li
+            {
+                float:left;
+                width:20px;
+                text-align:center;
+                cursor:pointer;
+            }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#rating li").mousemove(function () {
+                //$(this).prevAll().andSelf().text("★");
+                //$(this).nextAll().text("☆");
+
+                //一行代码     注意end()的使用，找到对象
+                $(this).prevAll().andSelf().text("★").end().end().nextAll().text("☆");
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="rating">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+</body>
+</html>

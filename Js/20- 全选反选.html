@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        //实现全选
+        function checkAll() {
+            //触发事件的对象 全选的checkbox
+            var obj = event.srcElement;
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox" && inputs[i].name != "reCbox") {
+                    inputs[i].checked = obj.checked;//把obj的状态赋值给每一个子checkbox
+                }
+            }
+        }
+
+        //实现 去掉全选
+        window.onload = function () {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (inputs[i].id != "chkAll" && inputs[i].id != "reCbox") {
+                        inputs[i].onclick = singleCheck;//不能带小括号，因为是注册方法  而不是调用
+                    }
+                }
+            }
+        }
+
+        //判断所有子的checkbox是否都被选中
+        function singleCheck() {
+            //==============判断子checkbox是否被选中==============
+            var inputs = document.getElementsByTagName("input");
+            var isCheckAll = true;
+            for (var j = 0; j < inputs.length; j++) {
+                if (inputs[i].type == "checkbox" && inputs[i].id != "chkAll" && inputs[i].id != "reCbox") {
+                    if (!inputs[i].checked) {
+                        isCheckAll = false;
+                        break;
+                    }
+                }
+            }
+            document.getElementsById("chkAll").checked = isCheckAll;
+            //=====================================================
+        }
+
+        //反选
+        function btn_click() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox" && inputs[i].id != "chkAll" && inputs[i].id != "reCbox") {
+                    inputs[i].checked = !inputs[i].checked;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="chkAll" value="全选" onclick="checkAll()" />全选
+    <input type="button" name="button" value="反选" onclick="btn_click()"/>
+    <br />
+    <input type="checkbox" name="cbox" value="吃饭" />吃饭<br />
+    <input type="checkbox" name="cbox" value="睡觉" />睡觉<br />
+    <input type="checkbox" name="cbox" value="打豆豆" />打豆豆<br />
+</body>
+</html>

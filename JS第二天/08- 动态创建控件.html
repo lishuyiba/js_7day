@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            ////返回dom对象，在内存中创建
+            //var btn = document.createElement("input");
+            //btn.type = "button";
+            //btn.value = "我是动态创建的控件";
+
+            ////注册动态事件
+            //btn.onclick = function () {
+            //    //alert("我是动态创建的控件");
+            //    //removeChild 移除控件
+            //    var txt = document.getElementById("t");
+            //    var div = document.getElementById("d1");
+            //    div.removeChild(txt);
+            //}
+
+            ////加载到dom上显示
+            //var div = document.getElementById("d1");
+
+
+            //动态创建控件时，获取控件的id 注意问题！！！
+            var btn = document.createElement("input");
+            btn.type = "button";
+            btn.value = "button";
+            btn.id = "b1";
+            var div = document.getElementById("d1");
+
+            //代码放在此处 会报错！！！！ 因为动态创建的控件是在内存里面的，而getElementById是从页面上去找。所以，报错！
+            //var b1 = document.getElementById("b1");
+            //b1.onclick = function () {
+            //    alert("abc");
+            //}
+
+            div.appendChild(btn);
+            //代码放在此处 是正确的，因为页面已经加载出来了。可以通过“getElementById”找的到。
+            var b1 = document.getElementById("b1");
+            b1.onclick = function () {
+                alert("abc");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="d1">
+        afefehfeaefw<input id="t" type="text" />
+    </div>
+</body>
+</html>

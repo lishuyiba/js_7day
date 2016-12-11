@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>动态生成n个文本框</title>
+    <script type="text/javascript">
+        function f1() {
+            var num = document.getElementById("txt").value;
+            var div = document.getElementById("d1");
+            
+            //在每次生成文本框之前，先清空div
+            div.innerHTML = "";
+
+            for (var i = 1; i <= parseInt(num) ; i++) {
+                var t = document.createElement("input");
+                t.type = "text";
+                t.value = i;
+                t.id = "t" + i;
+
+                div.appendChild(t);
+
+                //控制每行显示3个文本框
+                if (i%3==0) {
+                    var br = document.createElement("br");
+                    div.appendChild(br);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="txt" type="text" /><input type="button" value="click" onclick="f1()" />
+    
+    <div id="d1">
+
+    </div>
+</body>
+</html>

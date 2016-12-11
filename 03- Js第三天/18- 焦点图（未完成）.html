@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #imgs
+        {
+            position:absolute;
+            left:100px;
+            top:100px;
+            border:solid 1px red;
+            width:300px;
+            height:225px;
+        }
+        #links
+        {
+            position:absolute;
+            right:5px;
+            bottom:5px;
+        }
+            #links a
+            {
+                text-align:center;
+                width:20px;
+                text-decoration:none; /*去掉下划线*/
+                background-color:gray;
+                display:block;
+                float:left;
+                margin-left:4px;
+            }
+    </style>
+    <script type="text/javascript">
+        var nowPic = 1;
+        var maxPic;
+        var tmrId;
+        function showPic() {
+            var div = document.getElementById("imgs");
+            var imgs = div.getElementsByTagName("img");
+            maxPic = imgs.length;
+            for (var i = 0; i < maxPic; i++) {
+                if (i==nowPic) {
+                    //document.getElementById("img" + i).style.display = "";
+                    //document.getElementById("link" + i).style.backgroundColor = "red";
+                    alert("aaaa");
+                }
+                else {
+                    //document.getElementById("img" + i).style.display = "none";
+                    //document.getElementById("link" + i).style.backgroundColor = "gray";
+                }
+            }
+
+            if (nowPic==maxPic) {
+                nowPic = 1;
+            } else {
+                nowPic++;
+            }
+            tmrId = setInterval("showPic()", 3000);
+
+        }
+        window.onload = function () {
+            showPic();
+
+            var div = document.getElementById("links");
+            var imgs = div.getElementsByTagName("a");
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].onclick = function () {
+                    nowPic = this.innerHTML;
+                    clearTimeout(tmrId);
+                    showPic();
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="imgs">
+        <img src="images/2.jpg" id="lmg1" width="300" style="display:none"/>
+        <img src="images/3.gif" id="Img2" width="300" style="display:none"/>
+        <img src="images/4.jpg" id="Img3" width="300" style="display:none"/>
+
+        <div id="links">
+            <a href="#" id="link1">1</a>
+            <a href="#" id="link2">2</a>
+            <a href="#" id="link3">3</a>
+        </div>
+    </div>
+</body>
+</html>

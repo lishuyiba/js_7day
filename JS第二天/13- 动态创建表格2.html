@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/ecmascript">
+        window.onload = function () {
+            var json = [{ "name": "cnblogs", "site": "http://www.cnblogs.com" },
+                       { "name": "cnbeta", "site": "http://www.cnbeta.com" },
+                       { "name": "qiushibaike", "site": "http://www.qiushibaike.com" }
+            ];
+            var tb = document.createElement("table");
+            document.getElementById("d1").appendChild(tb);
+            tb.border = 1;
+
+            for (var i = 0; i < json.length; i++) {
+                var site = json[i];
+                //插入行
+                var row = tb.insertRow(-1);
+
+                //在行中插入 第一列
+                var td = row.insertCell(-1);
+                td.innerHTML = site.name;
+
+
+                //在行中插入 第二列
+                td = row.insertCell(-1);
+                td.innerHTML = site.site;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+</body>
+</html>

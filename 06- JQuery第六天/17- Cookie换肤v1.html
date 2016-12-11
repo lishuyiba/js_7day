@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        div
+        {
+            width:50px;
+            height:50px;
+            border:1px solid red;
+            cursor:pointer;
+        }
+        /*#d1
+        {
+            background-color:blueviolet;
+        }
+        #d2
+        {
+            background-color:green;
+        }
+        #d3
+        {
+            background-color:yellow;
+        }
+        #d4
+        {
+            background-color:blue;
+        }*/
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1.js"></script>
+    <script src="JQuery/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var $color = $.cookie("color");
+            if ($color) {
+                if ($color == "blue") {//判断cookie对应的值，再根据该值设置div背景颜色
+                    $("#d1").css("background-color", "blue");
+                    $("#d2").css("background-color", "white");
+                    $("#d3").css("background-color", "white");
+                    $("#d4").css("background-color", "white");
+                }
+                if ($color == "red") {
+                    $("#d1").css("background-color", "white");
+                    $("#d2").css("background-color", "red");
+                    $("#d3").css("background-color", "white");
+                    $("#d4").css("background-color", "white");
+                }
+                if ($color == "yellow") {
+                    $("#d1").css("background-color", "white");
+                    $("#d2").css("background-color", "white");
+                    $("#d3").css("background-color", "yellow");
+                    $("#d4").css("background-color", "white");
+                }
+                if ($color == "black") {
+                    $("#d1").css("background-color", "white");
+                    $("#d2").css("background-color", "white");
+                    $("#d3").css("background-color", "white");
+                    $("#d4").css("background-color", "black");
+                }
+            }
+
+            //每一个color对应着每一块div
+            var color1 = "blue"; 
+            var color2 = "red";
+            var color3 = "yellow";
+            var color4 = "black";
+
+            //点击div
+            $("#d1").click(function () {
+                $(this).css("background-color", color1);//设置背景颜色
+                $.cookie("color", color1, { expires: 1 });//存入cookie
+                $("#d2").css("background-color", "white");
+                $("#d3").css("background-color", "white");
+                $("#d4").css("background-color", "white");
+            })
+            $("#d2").click(function () {
+                $(this).css("background-color", color2);
+                $.cookie("color", color2, { expires: 1 });
+                $("#d1").css("background-color", "white");
+                $("#d3").css("background-color", "white");
+                $("#d4").css("background-color", "white");
+            })
+            $("#d3").click(function () {
+                $(this).css("background-color", color3);
+                $.cookie("color", color3, { expires: 1 });
+                $("#d1").css("background-color", "white");
+                $("#d2").css("background-color", "white");
+                $("#d4").css("background-color", "white");
+            })
+            $("#d4").click(function () {
+                $(this).css("background-color", color4);
+                $.cookie("color", color4, { expires: 1 });
+                $("#d1").css("background-color", "white");
+                $("#d2").css("background-color", "white");
+                $("#d3").css("background-color", "white");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="d1">1</div>
+    <br />
+    <div id="d2">2</div>
+    <br />
+    <div id="d3">3</div>
+    <br />
+    <div id="d4">4</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var json = [{ "name": "zs", "age": 18 }];
+
+            //传过来json参数
+            $("#test").bind("click", json, function (e) {
+                //alert(e.data); //传过来的是 Object对象
+                alert(e.data.name);//获取事件传递过来的参数 e.data  【e.data.name获取name属性】
+            });
+        })
+    </script>
+</head>
+<body>
+    <input id="test" type="button" value="test" />
+</body>
+</html>

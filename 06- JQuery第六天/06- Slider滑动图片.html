@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        img
+        {
+            width:150px;
+            height:100px;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("img").hover(function () {
+                $(this).animate({ "width": 270, "height": 270 }, "slow");
+            }, function () {
+                $(this).animate({ "width": 150, "height": 100 }, "slow");
+            })
+        })
+    </script>
+</head>
+<body>
+    <br /><br /><br /><br /><br /><br />
+    <table>
+        <tr>
+            <td>
+                <img src="images1/01.jpg" />
+            </td>
+            <td>
+                <img src="images1/02.jpg" />
+            </td>
+            <td>
+                <img src="images1/03.jpg" />
+            </td>
+            <td>
+                <img src="images1/04.jpg" />
+            </td>
+            <td>
+                <img src="images1/04.jpg" />
+            </td>
+            <td>
+                <img src="images1/04.jpg" />
+            </td>
+            <td>
+                <img src="images1/04.jpg" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

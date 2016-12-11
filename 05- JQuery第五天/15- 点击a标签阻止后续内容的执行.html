@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //阻止后续内容执行
+
+            //$("#link").click(function () {
+            //    //第一种
+            //    alert("baidu");
+            //    return false;
+            //})
+
+
+            $("#link").click(function (e) {
+                //第二种
+                alert("baidu"); //执行
+                e.preventDefault(); //取消后续内容执行
+                alert("google"); //执行
+            })
+        })
+    </script>
+</head>
+<body>
+    <a id="link" href="http://www.baidu.com" >baidu</a>
+</body>
+</html>

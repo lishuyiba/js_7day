@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我爱中国</title>
+    <script type="text/javascript">
+        function stopRoll() {
+            if (itemsId) {
+                clearInterval(itemsId);
+            }
+        }
+        var itemsId;
+        function leftRoll() {
+            itemsId = setInterval(function() {
+                var title = document.title;
+                var headTitle = title.substr(0, 1);
+                var lastTitle = title.substr(1);
+                document.title = lastTitle + headTitle;
+            }, 1000);
+        }
+        function rightRoll() {
+            itemsId = setInterval(function () {
+                var title = document.title;
+                var headTitle = title.substr(0, title.length-1);
+                var lastTitle = title.substr(title.length-1);
+                document.title = lastTitle + headTitle;
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="left" onclick="leftRoll()" />
+    <input type="button" name="name" value="right" onclick="rightRoll()" />
+</body>
+</html>

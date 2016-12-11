@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        //第一种方式
+        //var count = 10;
+        //setInterval("test()",1000);
+        //function test() {
+        //    var btn = document.getElementById("btn");
+        //    var time_Span = document.getElementById("time_Span");
+        //    if (count>0) {
+        //        count--;
+        //        btn.value = "同意协议(" + count + ")";
+        //        if (count == "0") {
+        //            btn.disabled = false;
+        //            btn.value = "同意协议";
+        //        }
+        //    }
+        //}
+
+        //第二种方式
+        var count = 10;
+        var tmrId = setInterval("test()", 1000);
+        function test() {
+            var btn = document.getElementById("btn");
+            var time_Span = document.getElementById("time_Span");
+            if (count > 0) {
+                count--;
+                btn.value = "请仔细阅读协议(" + count + ")";
+            }
+            else {
+                btn.value = "同意协议";
+                btn.disabled = false;
+                clearInterval(tmrId);
+            }
+        }
+        //页面载入的时候，先执行一次。
+        window.onload = function () {
+            test();
+        }
+    </script>
+</head>
+<body>
+    <textarea>请认真阅读协议....</textarea><br />
+    <input id="btn" type="button" value="请仔细阅读协议(10)" disabled="disabled"/>
+</body>
+</html>

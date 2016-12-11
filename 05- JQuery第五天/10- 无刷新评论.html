@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                var name = $("#txtName").val();
+                var content = $("#txtContent").val();
+
+                var $tb = $("#tb");
+                //判断页面上是否有table对象，如果没有动态创建，如果有了 则从页面上获取
+                if ($tb.length == 0) {
+                    //动态创建table
+                    $tb = $("<table id='tb'></tbale>");
+                    $tb.attr("border", "1px");
+                    $tb.attr("width", "400px");
+                    $tb.attr("height", "20px");
+                    //把table添加到div
+                    $("#reply").append($tb);
+                }
+                //else {
+                //    $tb = $("#tb");
+                //}
+
+                //创建 行
+                var $tr = $("<tr></tr>");
+                //$tb.append($tr);//评论是追加到下面来
+                $tb.prepend($tr);//评论是添加到前面来
+
+                //创建 td 第一个
+                var $td = $("<td>" + name + "</td>");
+                $tr.append($td);
+
+                //创建 td 第二个
+                $td = $("<td>" + content + "</td>");
+                $tr.append($td);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="reply">
+
+    </div>
+    用户：<input id="txtName" type="text" /><br />
+    内容：<textarea id="txtContent"></textarea><br />
+    <input id="btn" type="button" value="send" />
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        #tree ul li
+        {
+            margin-top:5px;
+        }
+        #tree div a
+        {
+            text-decoration:none; /*去掉下划线*/
+        }
+        .hide
+        {
+            display:none;
+        }
+        .show
+        {
+            display:block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var tree = document.getElementById("tree");
+            var uls = tree.getElementsByTagName("ul");
+            //隐藏子节点
+            for (var i = 0; i < uls.length; i++) {
+                uls[i].className = "hide";
+            }
+
+            var links = tree.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                //点击a标签
+                links[i].onclick = function () {
+                    //var obj = getNextSiling(this.parentNode);
+                    //var classname = obj.className;
+                    //if (classname=="show") {
+                    //    obj.className = "hide";
+                    //    this.childNode[0].src = "plus.png";
+                    //}
+                    //else {
+                    //    obj.className = "show";
+                    //    this.childNode[0].src = "minus.png";
+                    //}
+                    //return false;
+                    alert("aaa");
+                }
+            }
+        }
+
+        function getNextSiling(obj) {
+            var x = obj.nextSibling;
+            if (x.nodeType!=1) {
+                x.x.nextSibling;
+            }
+            return x;
+        }
+    </script>
+</head>
+<body>
+    <div id="tree">
+        <div><a href="#">
+            <img src="plus.png" border="0px" align="middle" />一级菜单</a></div>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+        <div><a href="#">
+            <img src="plus.png" border="0px" align="middle" />一级菜单</a></div>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+        <div><a href="#">
+            <img src="plus.png" border="0px" align="middle" />一级菜单</a></div>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+        <div><a href="#">
+            <img src="plus.png" border="0px" align="middle" />一级菜单</a></div>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </div>
+</body>
+</html>

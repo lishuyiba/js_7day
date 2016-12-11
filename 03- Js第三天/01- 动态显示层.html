@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .cls/*创建类样式*/
+        {
+            width:200px;
+            height:200px;
+            border:1px solid red;
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                //鼠标放上去
+                links[i].onmouseover = function () {
+                    //动态创建层
+                    var div = document.createElement("div");
+                    div.id = "d1";
+                    div.className = "cls";//创建类样式
+                    div.innerHTML = "详细内容";
+
+                    //div.style.top = event.clientY + "px";
+                    //div.style.left = event.clientX + "px";
+                    div.style.top = event.clientY + "px";
+                    div.style.left = event.clientX + "px";
+
+                    document.body.appendChild(div);//添加到body中
+                };
+
+                //鼠标离开
+                links[i].onmouseout = function () {
+                    var div = document.getElementById("d1");
+                    if (div) {
+                        document.body.removeChild(div);
+                    }
+                };
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="#">baiduh</a>
+</body>
+</html>

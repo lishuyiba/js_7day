@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .cls
+        {
+            background-color:blue;
+        }
+    </style>
+    <script src="Scripts1.4/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //设置href属性
+            $("#btn").click(function () {
+                $("#link").attr("href", "http://www.baidu.com");
+                //$("#link").attr("style", "background-color:red");//设置行内样式
+                //$("#link").attr("class", "cls");//设置类样式
+
+                //css方式设置样式
+                //$("#link").css("color", "red");
+                //链式编程格式1
+                //$("#link").css("color", "red").css("font-size", "100px");
+                //链式编程格式2
+                $("#link").css({ "color": "red","background-color":"blue" })
+            });
+
+            //移除href属性
+            $("#remove").click(function () {
+                //获取href属性
+                //alert($("#link").attr("href"));
+                $("#link").removeAttr("href");
+            });
+        });
+    </script>
+</head>
+<body>
+    <a id="link">baidu</a>
+    <input id="btn" type="button" value="set" />
+    <input id="remove" type="button" value="remove" />
+</body>
+</html>

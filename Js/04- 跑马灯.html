@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我爱中华人民共和国</title>
+    <script type="text/javascript">
+
+        //默认执行的操作
+        //setInterval(function () {
+
+        //    var title = document.title;
+        //    var first = title.substr(0, 1);
+        //    var last = title.substr(1);
+        //    document.title = last + first;
+
+        //}, 500)
+
+        function left() {
+            setInterval(function () {
+
+                var title = document.title;
+                var first = title.substr(0, 1);
+                var last = title.substr(1);
+                document.title = last + first;
+
+            }, 500)
+        }
+
+        function right() {
+            setInterval(function () {
+
+                var title = document.title;
+                var first = title.substr(0, 1);
+                var last = title.substr(1);
+                document.title = first + last;
+
+            }, 500)
+        }
+
+        //---------------------------向左向右---------------------------------
+        var dir = "left";
+        setInterval(function () {
+            var title = document.title;
+            var first;
+            var last;
+            if (dir=="left") {
+                first = title.substr(0, 1);
+                last = title.substr(1);
+            }
+            else if (dir=="right") {
+                first = title.substr(0, title.length - 1);
+                last = title.substr(title.length - 2);
+            }
+            document.title = last + first;
+        }, 500);
+
+        function setDir(d) {
+            dir = d;
+        };
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="left" onclick="left()"/>
+    <br />
+    <input type="button" name="name" value="right" onclick="right" />
+
+    <samp>-------------------------------------------</samp>
+    <br />
+    <input type="button" name="name" value="向左" onclick="setDir('left')"/>
+    <input type="button" name="name" value="向右" onclick="setDir('right')"/>
+</body>
+</html>
